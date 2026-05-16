@@ -3,7 +3,7 @@ import { useState } from "react";
 import { services, faqs } from "@/lib/content";
 import { Reveal } from "@/components/Reveal";
 
-export const Route = createFileRoute("/_site/services")({
+export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
       { title: "Services & Pricing — SETAL Studio" },

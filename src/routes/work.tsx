@@ -3,7 +3,7 @@ import { useState } from "react";
 import { projects } from "@/lib/content";
 import { Reveal } from "@/components/Reveal";
 
-export const Route = createFileRoute("/_site/work")({
+export const Route = createFileRoute("/work")({
   head: () => ({
     meta: [
       { title: "Work — SETAL Studio" },
