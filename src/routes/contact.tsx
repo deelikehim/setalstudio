@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Reveal } from "@/components/Reveal";
 
-export const Route = createFileRoute("/_site/contact")({
+export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
       { title: "Contact — SETAL Studio" },

@@ -10,7 +10,7 @@ import { Counter } from "@/components/Counter";
 import { projects, clients, stats, testimonials, awards, processSteps } from "@/lib/content";
 import { useState } from "react";
 
-export const Route = createFileRoute("/_site/")({
+export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "SETAL Studio — Independent design studio for ambitious brands" },

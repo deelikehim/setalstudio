@@ -5,7 +5,7 @@ import { Reveal } from "@/components/Reveal";
 import { Counter } from "@/components/Counter";
 import { awards } from "@/lib/content";
 
-export const Route = createFileRoute("/_site/about")({
+export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
       { title: "Studio — SETAL" },
