@@ -20,7 +20,7 @@ const tiers = [
   { name: "Continuum", price: "Bespoke", period: "annual", desc: "Embedded studio partner. Quarterly campaigns, ongoing art direction, on-call engineering.", includes: ["Dedicated team of 3", "Quarterly campaigns", "Unlimited revisions", "Weekly sync", "Priority response"], featured: false },
 ];
 
-export default ServicesPage;
+
 function ServicesPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
