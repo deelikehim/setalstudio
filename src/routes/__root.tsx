@@ -7,6 +7,8 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
+import { Nav } from "@/components/Nav";
+import { Footer } from "@/components/Footer";
 
 import appCss from "../styles.css?url";
 
@@ -113,7 +115,14 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Outlet />
+      <div className="relative min-h-screen bg-background text-foreground overflow-x-hidden">
+        <div className="fixed inset-0 pointer-events-none z-0 bg-radial-aura opacity-60" />
+        <Nav />
+        <main className="relative z-10">
+          <Outlet />
+        </main>
+        <Footer />
+      </div>
     </QueryClientProvider>
   );
 }
