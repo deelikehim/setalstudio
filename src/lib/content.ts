@@ -37,42 +37,77 @@ export const stats: { value: number; suffix: string; label: string; prefix?: str
   { value: 6, suffix: "y", label: "Average partnership length" },
 ];
 
-export const services = [
+export type Service = {
+  no: string;
+  title: string;
+  desc: string;
+  detail: string;
+  deliverables: string[];
+  ngn: string;
+  gbp: string;
+  timeline: string;
+};
+
+export const services: Service[] = [
   {
     no: "01",
     title: "Landing Pages",
     desc: "High-converting, single-page experiences crafted to launch products, capture leads and tell a focused story with cinematic motion.",
-    deliverables: ["Art direction", "Responsive design", "Copy structure", "Analytics & SEO"],
+    detail: "Perfect for product launches, marketing campaigns, waitlists, and lead capture. We design and ship a single beautifully crafted page that loads fast, ranks well, and converts visitors into customers — complete with copy structure, on-brand visuals, contact forms, and analytics.",
+    deliverables: ["Art direction & copy", "Responsive design", "Lead / contact form", "Analytics & SEO"],
+    ngn: "80,000",
+    gbp: "45",
+    timeline: "1–2 weeks",
   },
   {
     no: "02",
     title: "Full Websites",
     desc: "Bespoke multi-page websites for brands, agencies and founders. Every section composed around your narrative and audience.",
+    detail: "A complete multi-page website with up to 10 custom pages, a content management system so you can edit copy yourself, custom motion, SEO foundations, and three months of post-launch care. Built for businesses ready to look world-class online.",
     deliverables: ["UX architecture", "High-fidelity design", "CMS integration", "Performance tuning"],
+    ngn: "250,000",
+    gbp: "130",
+    timeline: "4–6 weeks",
   },
   {
     no: "03",
     title: "Web Applications",
     desc: "Custom dashboards, SaaS platforms and internal tools. Built with React, TypeScript and modern cloud — engineered to scale.",
+    detail: "From SaaS dashboards to internal tools and member portals. Includes user authentication, role-based access, secure database, admin panel, third-party integrations, and the engineering rigour to grow with your business.",
     deliverables: ["Auth & roles", "Database design", "API & integrations", "Admin panels"],
+    ngn: "600,000",
+    gbp: "320",
+    timeline: "6–10 weeks",
   },
   {
     no: "04",
     title: "E-commerce & Shopping",
     desc: "Conversion-led online stores with secure checkout, inventory and global payments. Shopify, headless commerce or fully custom.",
+    detail: "Beautiful, fast online stores with secure checkout, inventory management, shipping rules, and global payment gateways (Paystack, Flutterwave, Stripe). Built on Shopify, headless commerce, or fully custom to your catalogue.",
     deliverables: ["Storefront design", "Payments & shipping", "Product CMS", "Order workflows"],
+    ngn: "500,000",
+    gbp: "270",
+    timeline: "5–8 weeks",
   },
   {
     no: "05",
     title: "Mobile Apps",
     desc: "Cross-platform iOS and Android apps that feel native. From MVPs to flagship products with smooth animation and offline support.",
+    detail: "Cross-platform iOS and Android apps that feel truly native. Push notifications, offline-friendly UX, App Store and Play Store submission, plus version updates after launch — taking your product from MVP to flagship.",
     deliverables: ["iOS & Android", "Push notifications", "App store launch", "Post-launch updates"],
+    ngn: "900,000",
+    gbp: "480",
+    timeline: "8–14 weeks",
   },
   {
     no: "06",
     title: "Care & Strategy",
     desc: "Ongoing maintenance, hosting, content updates and growth strategy so your product compounds in value long after launch.",
+    detail: "A monthly retainer that keeps your site fast, secure and growing. Hosting, uptime monitoring, content edits, security patches, SEO refinements, and quarterly growth strategy with the SETAL team on standby.",
     deliverables: ["Hosting & uptime", "Monthly updates", "SEO & analytics", "Growth consulting"],
+    ngn: "60,000",
+    gbp: "30",
+    timeline: "Monthly",
   },
 ];
 
