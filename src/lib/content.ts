@@ -138,12 +138,12 @@ export const awards = [
 ];
 
 export const faqs = [
-  { q: "What does a typical engagement cost?", a: "Landing pages start from ₦250,000 / £130. Full websites start from ₦800,000 / £420. Web apps and e-commerce platforms scale from ₦1,500,000 / £800. Mobile apps start from ₦2,500,000 / £1,300. Every proposal is bespoke to your scope." },
-  { q: "How long does a project take?", a: "A landing page takes 1–2 weeks. A full website is 4–6 weeks. Web apps and mobile apps typically take 8–14 weeks. Timelines are set at week zero and honored." },
+  { q: "What does a typical engagement cost?", a: "Landing pages start from ₦80,000 / £45. Full websites start from ₦250,000 / £130. Web apps and e-commerce platforms scale from ₦500,000 / £270. Mobile apps start from ₦900,000 / £480. Every proposal is bespoke to your scope." },
+  { q: "How long does a project take?", a: "A landing page takes 1–2 weeks. A full website is 4–6 weeks. Web apps and mobile apps typically take 6–14 weeks. Timelines are set at week zero and honored." },
   { q: "Do you work with early-stage founders?", a: "Yes. We reserve roughly 20% of our annual capacity for ambitious early-stage founders, often with flexible payment terms." },
   { q: "Where is the studio based?", a: "We are headquartered in Lagos, Nigeria with a second studio in Ekpoma, Edo State, and a Manchester (UK) studio opening soon. We serve clients across Africa, Europe, the Americas, Asia and Oceania." },
   { q: "Do you also handle development?", a: "Always. Design and engineering are inseparable here. We never hand off a Figma file and walk away — every project ships from this studio." },
-  { q: "How do we get started?", a: "Send a brief through the contact page, WhatsApp +234 704 678 7444, or email setalstudio@gmail.com. We reply to every serious enquiry within 48 hours." },
+  { q: "How do we get started?", a: "Send a brief through the contact page, WhatsApp / call +234 704 678 7443, message us on Telegram, or email setalstudio@gmail.com. We reply to every serious enquiry within 48 hours." },
 ];
 
 export const processSteps = [
@@ -165,6 +165,23 @@ export const regions = ["Africa", "Europe", "Americas", "Asia", "Oceania"];
 
 export const contactInfo = {
   email: "setalstudio@gmail.com",
-  phone: "+234 704 678 7444",
-  whatsapp: "https://wa.me/2347046787444",
+  phone: "+234 704 678 7443",
+  phoneTel: "tel:+2347046787443",
+  whatsapp: "https://wa.me/2347046787443",
+  telegram: "https://t.me/+2347046787443",
 };
+
+export const budgetRanges = [
+  { label: "₦80–250k", sub: "£45–130", value: "80k-250k" },
+  { label: "₦250–600k", sub: "£130–320", value: "250k-600k" },
+  { label: "₦600k–1.2M", sub: "£320–640", value: "600k-1.2M" },
+  { label: "₦1.2M+", sub: "£640+", value: "1.2M+" },
+];
+
+export const contactMethods = [
+  { label: "WhatsApp", value: "whatsapp" },
+  { label: "Phone call", value: "phone" },
+  { label: "Telegram", value: "telegram" },
+  { label: "Email", value: "email" },
+];
+
