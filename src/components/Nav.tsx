@@ -27,8 +27,8 @@ export function Nav() {
       const d = new Date();
       setTime(
         d.toLocaleTimeString("en-US", {
-          hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: false, timeZone: "Europe/Paris",
-        }) + " CET",
+          hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: false, timeZone: "Africa/Lagos",
+        }) + " WAT",
       );
     };
     tick();
