@@ -51,7 +51,14 @@ function ServicesPage() {
                   </span>
                 </div>
                 <h3 className="font-display text-4xl md:text-5xl font-extrabold tracking-tight mb-4">{s.title}</h3>
-                <p className="text-foreground/70 leading-relaxed mb-8 max-w-md">{s.desc}</p>
+                <p className="text-foreground/70 leading-relaxed mb-4 max-w-md">{s.desc}</p>
+                <p className="text-sm text-foreground/60 leading-relaxed mb-6 max-w-md">{s.detail}</p>
+                <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-6 pb-6 border-b border-border">
+                  <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">From</span>
+                  <span className="font-display text-2xl font-extrabold text-gradient">₦{s.ngn}</span>
+                  <span className="font-mono text-xs text-foreground/70">≈ £{s.gbp}</span>
+                  <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-accent ml-auto">{s.timeline}</span>
+                </div>
                 <ul className="space-y-2">
                   {s.deliverables.map((d) => (
                     <li key={d} className="flex items-center gap-3 font-mono text-xs uppercase tracking-widest text-muted-foreground">
