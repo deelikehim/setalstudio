@@ -46,8 +46,9 @@ export function Footer() {
               { l: "Instagram" }, { l: "Dribbble" }, { l: "Behance" }, { l: "LinkedIn" }, { l: "Are.na" },
             ]} />
             <FooterCol title="Studios" items={[
-              { l: "Paris" }, { l: "Lisbon" }, { l: "Tokyo" }, { l: "Remote" },
+              { l: "Lagos, NG" }, { l: "Ekpoma, Edo" }, { l: "Manchester, UK (soon)" }, { l: "Remote worldwide" },
             ]} />
+
           </div>
         </div>
 
