@@ -116,19 +116,23 @@ function ContactPage() {
           <Reveal delay={150} className="lg:col-span-4 lg:col-start-9 space-y-12">
             <div>
               <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent mb-4">Direct</p>
-              <a href="mailto:hello@setal.studio" className="font-serif italic text-3xl text-gradient">hello@setal.studio</a>
+              <a href="mailto:setalstudio@gmail.com" className="font-serif italic text-3xl text-gradient break-words">setalstudio@gmail.com</a>
+            </div>
+            <div>
+              <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent mb-4">Phone / WhatsApp</p>
+              <a href="https://wa.me/2347046787444" className="font-serif italic text-2xl text-gradient">+234 704 678 7444</a>
             </div>
             <div>
               <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent mb-4">Studios</p>
               <ul className="space-y-3 text-foreground/70">
-                <li><strong className="text-foreground">Paris</strong> — 14 Rue Vieille du Temple, 75004</li>
-                <li><strong className="text-foreground">Lisbon</strong> — Príncipe Real (by appointment)</li>
-                <li><strong className="text-foreground">Tokyo</strong> — Partner studio, Shibuya</li>
+                <li><strong className="text-foreground">Lagos (HQ)</strong> — Egbeda, Mainland, Lagos, Nigeria</li>
+                <li><strong className="text-foreground">Ekpoma</strong> — Oxford Road, Ihumudumu, Ekpoma, Edo, Nigeria</li>
+                <li><strong className="text-foreground">Manchester, UK</strong> — Opening soon</li>
               </ul>
             </div>
             <div>
-              <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent mb-4">Press & general</p>
-              <a href="mailto:press@setal.studio" className="hover:text-accent transition-colors">press@setal.studio</a>
+              <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent mb-4">Regions we serve</p>
+              <p className="text-foreground/70">Africa · Europe · Americas · Asia · Oceania</p>
             </div>
             <div>
               <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent mb-4">Availability</p>
