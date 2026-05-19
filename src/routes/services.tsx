@@ -78,18 +78,20 @@ function ServicesPage() {
             </div>
           </Reveal>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
             {tiers.map((t, i) => (
               <Reveal key={t.name} delay={i * 100}>
-                <div className={`relative h-full p-10 rounded-md overflow-hidden ${t.featured ? "border-chromatic shadow-luxe" : "border border-border bg-card"}`}>
+                <div className={`relative h-full p-8 rounded-md overflow-hidden ${t.featured ? "border-chromatic shadow-luxe" : "border border-border bg-card"}`}>
                   {t.featured && (
                     <span className="absolute top-4 right-4 font-mono text-[9px] uppercase tracking-widest text-accent">★ Most chosen</span>
                   )}
                   <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">{t.name}</p>
-                  <p className="font-display text-6xl font-extrabold tracking-tighter mb-2">
-                    {t.price === "Bespoke" ? <span className="text-gradient">Bespoke</span> : <><span className="text-2xl align-top mr-1">$</span>{t.price}</>}
+                  <p className="font-display text-4xl font-extrabold tracking-tighter mb-1 text-gradient">
+                    ₦{t.ngn}
                   </p>
+                  <p className="font-mono text-sm text-foreground/80 mb-2">≈ £{t.gbp}</p>
                   <p className="text-xs text-muted-foreground mb-6">{t.period}</p>
+
                   <p className="text-foreground/70 leading-relaxed mb-8">{t.desc}</p>
                   <ul className="space-y-3 mb-10">
                     {t.includes.map((it) => (
