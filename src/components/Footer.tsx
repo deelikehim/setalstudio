@@ -25,7 +25,8 @@ export function Footer() {
               to="/contact"
               className="inline-flex items-center gap-3 group"
             >
-              <span className="font-serif italic text-2xl text-gradient">hello@setal.studio</span>
+              <span className="font-serif italic text-2xl text-gradient">setalstudio@gmail.com</span>
+
               <span className="size-8 rounded-full border border-border grid place-items-center group-hover:bg-gradient-chromatic group-hover:border-transparent transition-all">
                 <svg viewBox="0 0 20 20" className="size-3"><path d="M4 10h12m-4-4l4 4-4 4" fill="none" stroke="currentColor" strokeWidth="1.5" /></svg>
               </span>
@@ -45,8 +46,9 @@ export function Footer() {
               { l: "Instagram" }, { l: "Dribbble" }, { l: "Behance" }, { l: "LinkedIn" }, { l: "Are.na" },
             ]} />
             <FooterCol title="Studios" items={[
-              { l: "Paris" }, { l: "Lisbon" }, { l: "Tokyo" }, { l: "Remote" },
+              { l: "Lagos, NG" }, { l: "Ekpoma, Edo" }, { l: "Manchester, UK (soon)" }, { l: "Remote worldwide" },
             ]} />
+
           </div>
         </div>
 
@@ -57,7 +59,7 @@ export function Footer() {
         </div>
 
         <div className="mt-10 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-start md:items-center gap-4 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
-          <span>&copy; 2026 SETAL Studio &mdash; Designed in Paris, deployed everywhere</span>
+          <span>&copy; 2026 SETAL Studio &mdash; Headquartered in Lagos, serving Africa · Europe · Americas · Asia · Oceania</span>
           <span className="text-accent">{now} UTC</span>
           <span>v4.2.1 / All systems operational</span>
         </div>

@@ -9,7 +9,7 @@ export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
       { title: "Studio — SETAL" },
-      { name: "description", content: "An independent design studio of seven, based in Paris, working with brands across fashion, hospitality, real estate, and tech." },
+      { name: "description", content: "An independent design studio headquartered in Lagos with offices in Ekpoma and Manchester (soon), serving brands across Africa, Europe, the Americas, Asia and Oceania." },
     ],
     links: [{ rel: "canonical", href: "/about" }],
   }),
@@ -46,7 +46,7 @@ function AboutPage() {
               &ldquo;The web has become a sea of sameness. Identical hero sections, identical fonts, identical promises. We exist to design the exceptions.&rdquo;
             </p>
             <p className="text-lg text-foreground/70 leading-relaxed max-w-2xl">
-              SETAL was founded in 2019 in a small Paris atelier with a single conviction: that the most valuable brands of the next decade would be the ones that look and feel like nothing else. Six years and forty-seven launches later, that conviction has only deepened.
+              SETAL was founded in Lagos with a single conviction: that the most valuable brands of the next decade would be the ones that look and feel like nothing else. Today the studio operates from Lagos and Ekpoma, with a Manchester (UK) office opening soon — serving clients across five continents.
             </p>
           </Reveal>
         </div>
@@ -84,7 +84,7 @@ function AboutPage() {
       <section className="py-32 px-6 sm:px-10 border-t border-border bg-obsidian/40">
         <div className="max-w-[1600px] mx-auto grid md:grid-cols-3 gap-12">
           {[
-            { v: 2019, label: "Founded in Paris", suffix: "" },
+            { v: 2019, label: "Founded in Lagos", suffix: "" },
             { v: 14, label: "Countries shipped to", suffix: "" },
             { v: 12, label: "Projects per year, by choice", suffix: "" },
           ].map((s, i) => (

@@ -14,7 +14,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "SETAL Studio — Independent design studio for ambitious brands" },
-      { name: "description", content: "We design identities, websites and interactive experiences for premium brands. Paris-based, working worldwide." },
+      { name: "description", content: "SETAL Studio designs landing pages, full websites, web apps, e-commerce and mobile apps. Headquartered in Lagos, serving brands across five continents." },
     ],
     links: [{ rel: "canonical", href: "/" }],
   }),

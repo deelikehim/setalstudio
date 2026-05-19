@@ -30,9 +30,9 @@ export const clients = [
   "MERIDIAN", "AURUM", "VESPER", "MONOLITH", "HALCYON", "OCULUS",
 ];
 
-export const stats = [
-  { value: 47, suffix: "+", label: "Award-winning launches" },
-  { value: 312, suffix: "M", label: "Generated in client revenue", prefix: "$" },
+export const stats: { value: number; suffix: string; label: string; prefix?: string }[] = [
+  { value: 47, suffix: "+", label: "Launches shipped worldwide" },
+  { value: 5, suffix: "", label: "Continents served" },
   { value: 98, suffix: "%", label: "Client retention rate" },
   { value: 6, suffix: "y", label: "Average partnership length" },
 ];
@@ -40,39 +40,39 @@ export const stats = [
 export const services = [
   {
     no: "01",
-    title: "Brand Identity",
-    desc: "Complete visual systems — logo, typography, motion, voice. We forge identities for brands that intend to last a century.",
-    deliverables: ["Logo system", "Typography & color", "Motion guidelines", "Brand book (120pg+)"],
+    title: "Landing Pages",
+    desc: "High-converting, single-page experiences crafted to launch products, capture leads and tell a focused story with cinematic motion.",
+    deliverables: ["Art direction", "Responsive design", "Copy structure", "Analytics & SEO"],
   },
   {
     no: "02",
-    title: "Website Design",
-    desc: "Bespoke marketing sites and e-commerce flagships built around your narrative. Every pixel intentional, every interaction earned.",
-    deliverables: ["Art direction", "UX architecture", "High-fidelity design", "Component library"],
+    title: "Full Websites",
+    desc: "Bespoke multi-page websites for brands, agencies and founders. Every section composed around your narrative and audience.",
+    deliverables: ["UX architecture", "High-fidelity design", "CMS integration", "Performance tuning"],
   },
   {
     no: "03",
-    title: "Interactive & WebGL",
-    desc: "Award-grade interactive experiences. Three.js, GSAP, Lottie — engineered for both wonder and Lighthouse 100.",
-    deliverables: ["3D environments", "Scroll choreography", "Motion design", "Performance audits"],
+    title: "Web Applications",
+    desc: "Custom dashboards, SaaS platforms and internal tools. Built with React, TypeScript and modern cloud — engineered to scale.",
+    deliverables: ["Auth & roles", "Database design", "API & integrations", "Admin panels"],
   },
   {
     no: "04",
-    title: "Development",
-    desc: "Production-grade code. React, Next.js, Astro, headless commerce. Designed to be maintained by your team for the next decade.",
-    deliverables: ["Frontend engineering", "CMS integration", "Commerce platforms", "Edge deployment"],
+    title: "E-commerce & Shopping",
+    desc: "Conversion-led online stores with secure checkout, inventory and global payments. Shopify, headless commerce or fully custom.",
+    deliverables: ["Storefront design", "Payments & shipping", "Product CMS", "Order workflows"],
   },
   {
     no: "05",
-    title: "Art Direction",
-    desc: "Ongoing creative partnership. We sit beside your founder or CMO and shape every visual touchpoint of the brand.",
-    deliverables: ["Campaign direction", "Photography curation", "Content systems", "Quarterly reviews"],
+    title: "Mobile Apps",
+    desc: "Cross-platform iOS and Android apps that feel native. From MVPs to flagship products with smooth animation and offline support.",
+    deliverables: ["iOS & Android", "Push notifications", "App store launch", "Post-launch updates"],
   },
   {
     no: "06",
-    title: "Strategy",
-    desc: "Positioning, narrative, and market posture for premium brands entering — or redefining — their category.",
-    deliverables: ["Workshops", "Competitive audits", "Narrative framework", "Roadmap"],
+    title: "Care & Strategy",
+    desc: "Ongoing maintenance, hosting, content updates and growth strategy so your product compounds in value long after launch.",
+    deliverables: ["Hosting & uptime", "Monthly updates", "SEO & analytics", "Growth consulting"],
   },
 ];
 
@@ -82,7 +82,7 @@ export const testimonials = [
     name: "Léa Marchetti", role: "Founder, Aeterna Horology", avatar: "/avatar-1",
   },
   {
-    quote: "They treat your brand like it&rsquo;s their own. Every detail considered, every conversation sharpening the work. The result speaks for itself.",
+    quote: "They treat your brand like it’s their own. Every detail considered, every conversation sharpening the work. The result speaks for itself.",
     name: "Hideo Tanaka", role: "Chief Creative, Vesta Group", avatar: "/avatar-2",
   },
   {
@@ -103,12 +103,12 @@ export const awards = [
 ];
 
 export const faqs = [
-  { q: "What does a typical engagement cost?", a: "Brand identity engagements start at $45k. Full website builds start at $85k. WebGL experiences and flagship launches scale from $120k. Every proposal is bespoke." },
-  { q: "How long does a project take?", a: "A brand identity is typically 6–8 weeks. A website is 10–14 weeks. We never rush; we never delay. The schedule is set at week zero and honored." },
-  { q: "Do you work with early-stage startups?", a: "Yes — selectively. We reserve roughly 20% of our annual capacity for ambitious early-stage founders, often with equity-adjusted terms." },
-  { q: "Where is the studio based?", a: "Paris is home. We have a satellite in Lisbon and partners in Tokyo. We work remotely with clients across 14 countries." },
+  { q: "What does a typical engagement cost?", a: "Landing pages start from ₦250,000 / £130. Full websites start from ₦800,000 / £420. Web apps and e-commerce platforms scale from ₦1,500,000 / £800. Mobile apps start from ₦2,500,000 / £1,300. Every proposal is bespoke to your scope." },
+  { q: "How long does a project take?", a: "A landing page takes 1–2 weeks. A full website is 4–6 weeks. Web apps and mobile apps typically take 8–14 weeks. Timelines are set at week zero and honored." },
+  { q: "Do you work with early-stage founders?", a: "Yes. We reserve roughly 20% of our annual capacity for ambitious early-stage founders, often with flexible payment terms." },
+  { q: "Where is the studio based?", a: "We are headquartered in Lagos, Nigeria with a second studio in Ekpoma, Edo State, and a Manchester (UK) studio opening soon. We serve clients across Africa, Europe, the Americas, Asia and Oceania." },
   { q: "Do you also handle development?", a: "Always. Design and engineering are inseparable here. We never hand off a Figma file and walk away — every project ships from this studio." },
-  { q: "How do we get started?", a: "Send a brief through the contact page. We reply to every serious inquiry within 48 hours with availability and next steps." },
+  { q: "How do we get started?", a: "Send a brief through the contact page, WhatsApp +234 704 678 7444, or email setalstudio@gmail.com. We reply to every serious enquiry within 48 hours." },
 ];
 
 export const processSteps = [
@@ -119,3 +119,17 @@ export const processSteps = [
   { no: "04", title: "Engineering", desc: "Bespoke development with motion, performance and accessibility baked in from the first commit." },
   { no: "05", title: "Launch", desc: "Coordinated launch, press kit, social rollout. Then six months of post-launch partnership." },
 ];
+
+export const studios = [
+  { city: "Lagos", country: "Nigeria", address: "Egbeda, Mainland, Lagos", status: "HQ" },
+  { city: "Ekpoma", country: "Edo, Nigeria", address: "Oxford Road, Ihumudumu, Ekpoma", status: "Studio" },
+  { city: "Manchester", country: "United Kingdom", address: "Opening soon", status: "Soon" },
+];
+
+export const regions = ["Africa", "Europe", "Americas", "Asia", "Oceania"];
+
+export const contactInfo = {
+  email: "setalstudio@gmail.com",
+  phone: "+234 704 678 7444",
+  whatsapp: "https://wa.me/2347046787444",
+};
