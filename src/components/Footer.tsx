@@ -25,7 +25,8 @@ export function Footer() {
               to="/contact"
               className="inline-flex items-center gap-3 group"
             >
-              <span className="font-serif italic text-2xl text-gradient">hello@setal.studio</span>
+              <span className="font-serif italic text-2xl text-gradient">setalstudio@gmail.com</span>
+
               <span className="size-8 rounded-full border border-border grid place-items-center group-hover:bg-gradient-chromatic group-hover:border-transparent transition-all">
                 <svg viewBox="0 0 20 20" className="size-3"><path d="M4 10h12m-4-4l4 4-4 4" fill="none" stroke="currentColor" strokeWidth="1.5" /></svg>
               </span>
