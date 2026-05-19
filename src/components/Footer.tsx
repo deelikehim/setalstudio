@@ -59,7 +59,7 @@ export function Footer() {
         </div>
 
         <div className="mt-10 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-start md:items-center gap-4 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
-          <span>&copy; 2026 SETAL Studio &mdash; Designed in Paris, deployed everywhere</span>
+          <span>&copy; 2026 SETAL Studio &mdash; Headquartered in Lagos, serving Africa · Europe · Americas · Asia · Oceania</span>
           <span className="text-accent">{now} UTC</span>
           <span>v4.2.1 / All systems operational</span>
         </div>
