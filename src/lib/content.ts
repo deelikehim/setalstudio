@@ -30,7 +30,7 @@ export const clients = [
   "MERIDIAN", "AURUM", "VESPER", "MONOLITH", "HALCYON", "OCULUS",
 ];
 
-export const stats = [
+export const stats: { value: number; suffix: string; label: string; prefix?: string }[] = [
   { value: 47, suffix: "+", label: "Launches shipped worldwide" },
   { value: 5, suffix: "", label: "Continents served" },
   { value: 98, suffix: "%", label: "Client retention rate" },
