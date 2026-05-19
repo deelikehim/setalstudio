@@ -15,10 +15,12 @@ export const Route = createFileRoute("/services")({
 });
 
 const tiers = [
-  { name: "Essential", price: "45k", period: "starting", desc: "For founders who need a strong brand foundation. Identity + landing page, shipped in 8 weeks.", includes: ["Brand identity system", "Landing page (5 sections)", "Component library", "1 round of revision"], featured: false },
-  { name: "Signature", price: "120k", period: "starting", desc: "Our flagship engagement. Full identity, marketing site or e-commerce, motion and engineering.", includes: ["Everything in Essential", "Full website (10–20 pages)", "Custom motion & WebGL", "Headless commerce", "6 months post-launch care"], featured: true },
-  { name: "Continuum", price: "Bespoke", period: "annual", desc: "Embedded studio partner. Quarterly campaigns, ongoing art direction, on-call engineering.", includes: ["Dedicated team of 3", "Quarterly campaigns", "Unlimited revisions", "Weekly sync", "Priority response"], featured: false },
+  { name: "Launch", ngn: "250,000", gbp: "130", period: "Landing page · from", desc: "A single, high-impact landing page for product launches, campaigns and lead capture. Shipped in 1–2 weeks.", includes: ["Custom landing page", "Mobile-first design", "Contact / lead form", "Basic SEO & analytics", "1 round of revisions"], featured: false },
+  { name: "Signature", ngn: "800,000", gbp: "420", period: "Full website · from", desc: "Our flagship engagement. A complete multi-page website with motion, CMS and engineering done in-studio.", includes: ["Up to 10 bespoke pages", "CMS so you can edit content", "Custom motion & micro-interactions", "On-page SEO + performance", "3 months post-launch care"], featured: true },
+  { name: "Platform", ngn: "1,500,000", gbp: "800", period: "Web app / shop · from", desc: "Web apps, dashboards and e-commerce stores with secure payments, accounts and admin tools.", includes: ["User auth & accounts", "Database & admin panel", "Payments & checkout", "Third-party integrations", "6 months priority support"], featured: false },
+  { name: "Mobile", ngn: "2,500,000", gbp: "1,300", period: "iOS + Android · from", desc: "Cross-platform mobile apps that feel native. From MVP to App Store and Play Store launch.", includes: ["iOS + Android build", "Push notifications", "Offline-friendly UX", "Store submission", "Ongoing version updates"], featured: false },
 ];
+
 
 
 function ServicesPage() {
