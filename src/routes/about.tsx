@@ -9,7 +9,7 @@ export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
       { title: "Studio — SETAL" },
-      { name: "description", content: "An independent design studio of seven, based in Paris, working with brands across fashion, hospitality, real estate, and tech." },
+      { name: "description", content: "An independent design studio headquartered in Lagos with offices in Ekpoma and Manchester (soon), serving brands across Africa, Europe, the Americas, Asia and Oceania." },
     ],
     links: [{ rel: "canonical", href: "/about" }],
   }),
