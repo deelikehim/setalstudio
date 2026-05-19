@@ -46,7 +46,7 @@ function AboutPage() {
               &ldquo;The web has become a sea of sameness. Identical hero sections, identical fonts, identical promises. We exist to design the exceptions.&rdquo;
             </p>
             <p className="text-lg text-foreground/70 leading-relaxed max-w-2xl">
-              SETAL was founded in 2019 in a small Paris atelier with a single conviction: that the most valuable brands of the next decade would be the ones that look and feel like nothing else. Six years and forty-seven launches later, that conviction has only deepened.
+              SETAL was founded in Lagos with a single conviction: that the most valuable brands of the next decade would be the ones that look and feel like nothing else. Today the studio operates from Lagos and Ekpoma, with a Manchester (UK) office opening soon — serving clients across five continents.
             </p>
           </Reveal>
         </div>
