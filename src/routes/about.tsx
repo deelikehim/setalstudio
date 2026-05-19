@@ -84,7 +84,7 @@ function AboutPage() {
       <section className="py-32 px-6 sm:px-10 border-t border-border bg-obsidian/40">
         <div className="max-w-[1600px] mx-auto grid md:grid-cols-3 gap-12">
           {[
-            { v: 2019, label: "Founded in Paris", suffix: "" },
+            { v: 2019, label: "Founded in Lagos", suffix: "" },
             { v: 14, label: "Countries shipped to", suffix: "" },
             { v: 12, label: "Projects per year, by choice", suffix: "" },
           ].map((s, i) => (
