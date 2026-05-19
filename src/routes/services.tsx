@@ -15,10 +15,10 @@ export const Route = createFileRoute("/services")({
 });
 
 const tiers = [
-  { name: "Launch", ngn: "250,000", gbp: "130", period: "Landing page · from", desc: "A single, high-impact landing page for product launches, campaigns and lead capture. Shipped in 1–2 weeks.", includes: ["Custom landing page", "Mobile-first design", "Contact / lead form", "Basic SEO & analytics", "1 round of revisions"], featured: false },
-  { name: "Signature", ngn: "800,000", gbp: "420", period: "Full website · from", desc: "Our flagship engagement. A complete multi-page website with motion, CMS and engineering done in-studio.", includes: ["Up to 10 bespoke pages", "CMS so you can edit content", "Custom motion & micro-interactions", "On-page SEO + performance", "3 months post-launch care"], featured: true },
-  { name: "Platform", ngn: "1,500,000", gbp: "800", period: "Web app / shop · from", desc: "Web apps, dashboards and e-commerce stores with secure payments, accounts and admin tools.", includes: ["User auth & accounts", "Database & admin panel", "Payments & checkout", "Third-party integrations", "6 months priority support"], featured: false },
-  { name: "Mobile", ngn: "2,500,000", gbp: "1,300", period: "iOS + Android · from", desc: "Cross-platform mobile apps that feel native. From MVP to App Store and Play Store launch.", includes: ["iOS + Android build", "Push notifications", "Offline-friendly UX", "Store submission", "Ongoing version updates"], featured: false },
+  { name: "Launch", ngn: "80,000", gbp: "45", period: "Landing page · from", desc: "A single, high-impact landing page for product launches, campaigns and lead capture. Shipped in 1–2 weeks.", includes: ["Custom landing page", "Mobile-first design", "Contact / lead form", "Basic SEO & analytics", "1 round of revisions"], featured: false },
+  { name: "Signature", ngn: "250,000", gbp: "130", period: "Full website · from", desc: "Our flagship engagement. A complete multi-page website with motion, CMS and engineering done in-studio.", includes: ["Up to 10 bespoke pages", "CMS so you can edit content", "Custom motion & micro-interactions", "On-page SEO + performance", "3 months post-launch care"], featured: true },
+  { name: "Platform", ngn: "500,000", gbp: "270", period: "Web app / shop · from", desc: "Web apps, dashboards and e-commerce stores with secure payments, accounts and admin tools.", includes: ["User auth & accounts", "Database & admin panel", "Payments & checkout", "Third-party integrations", "6 months priority support"], featured: false },
+  { name: "Mobile", ngn: "900,000", gbp: "480", period: "iOS + Android · from", desc: "Cross-platform mobile apps that feel native. From MVP to App Store and Play Store launch.", includes: ["iOS + Android build", "Push notifications", "Offline-friendly UX", "Store submission", "Ongoing version updates"], featured: false },
 ];
 
 
@@ -51,7 +51,14 @@ function ServicesPage() {
                   </span>
                 </div>
                 <h3 className="font-display text-4xl md:text-5xl font-extrabold tracking-tight mb-4">{s.title}</h3>
-                <p className="text-foreground/70 leading-relaxed mb-8 max-w-md">{s.desc}</p>
+                <p className="text-foreground/70 leading-relaxed mb-4 max-w-md">{s.desc}</p>
+                <p className="text-sm text-foreground/60 leading-relaxed mb-6 max-w-md">{s.detail}</p>
+                <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-6 pb-6 border-b border-border">
+                  <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">From</span>
+                  <span className="font-display text-2xl font-extrabold text-gradient">₦{s.ngn}</span>
+                  <span className="font-mono text-xs text-foreground/70">≈ £{s.gbp}</span>
+                  <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-accent ml-auto">{s.timeline}</span>
+                </div>
                 <ul className="space-y-2">
                   {s.deliverables.map((d) => (
                     <li key={d} className="flex items-center gap-3 font-mono text-xs uppercase tracking-widest text-muted-foreground">
