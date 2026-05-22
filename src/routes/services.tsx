@@ -39,31 +39,33 @@ function ServicesPage() {
       </section>
 
       {/* Services Grid */}
-      <section className="px-6 sm:px-10 pb-32">
-        <div className="max-w-[1600px] mx-auto grid md:grid-cols-2 gap-px bg-border border border-border rounded-md overflow-hidden">
+      <section className="px-4 sm:px-10 pb-32">
+        <div className="max-w-[1600px] mx-auto grid sm:grid-cols-2 gap-px bg-border border border-border rounded-md overflow-hidden">
           {services.map((s, i) => (
             <Reveal key={s.no} delay={i * 60}>
-              <div className="p-10 md:p-12 bg-background h-full group hover:bg-card transition-colors">
-                <div className="flex justify-between items-start mb-8">
+              <div className="p-6 sm:p-10 md:p-12 bg-background h-full group hover:bg-card transition-colors">
+                <div className="flex justify-between items-start mb-6 sm:mb-8">
                   <span className="font-mono text-xs text-accent">{s.no}</span>
-                  <span className="size-10 rounded-full border border-border grid place-items-center group-hover:bg-gradient-chromatic group-hover:border-transparent transition-all">
+                  <span className="size-9 sm:size-10 rounded-full border border-border grid place-items-center group-hover:bg-gradient-chromatic group-hover:border-transparent transition-all">
                     <svg viewBox="0 0 20 20" className="size-3"><path d="M4 10h12m-4-4l4 4-4 4" fill="none" stroke="currentColor" strokeWidth="1.5" /></svg>
                   </span>
                 </div>
-                <h3 className="font-display text-4xl md:text-5xl font-extrabold tracking-tight mb-4">{s.title}</h3>
-                <p className="text-foreground/70 leading-relaxed mb-4 max-w-md">{s.desc}</p>
-                <p className="text-sm text-foreground/60 leading-relaxed mb-6 max-w-md">{s.detail}</p>
-                <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-6 pb-6 border-b border-border">
-                  <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">From</span>
-                  <span className="font-display text-2xl font-extrabold text-gradient">₦{s.ngn}</span>
-                  <span className="font-mono text-xs text-foreground/70">≈ £{s.gbp}</span>
-                  <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-accent ml-auto">{s.timeline}</span>
+                <h3 className="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mb-4 break-words">{s.title}</h3>
+                <p className="text-foreground/70 leading-relaxed mb-4 max-w-md text-sm sm:text-base">{s.desc}</p>
+                <p className="text-xs sm:text-sm text-foreground/60 leading-relaxed mb-6 max-w-md">{s.detail}</p>
+                <div className="mb-6 pb-6 border-b border-border">
+                  <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                    <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">From</span>
+                    <span className="font-display text-xl sm:text-2xl font-extrabold text-gradient break-all">₦{s.ngn}</span>
+                    <span className="font-mono text-xs text-foreground/70">≈ £{s.gbp}</span>
+                  </div>
+                  <p className="mt-2 font-mono text-[10px] uppercase tracking-[0.25em] text-accent">{s.timeline}</p>
                 </div>
                 <ul className="space-y-2">
                   {s.deliverables.map((d) => (
-                    <li key={d} className="flex items-center gap-3 font-mono text-xs uppercase tracking-widest text-muted-foreground">
-                      <span className="size-1 rounded-full bg-accent" />
-                      {d}
+                    <li key={d} className="flex items-center gap-3 font-mono text-[10px] sm:text-xs uppercase tracking-widest text-muted-foreground">
+                      <span className="size-1 rounded-full bg-accent shrink-0" />
+                      <span className="break-words">{d}</span>
                     </li>
                   ))}
                 </ul>
@@ -72,6 +74,7 @@ function ServicesPage() {
           ))}
         </div>
       </section>
+
 
       {/* Pricing */}
       <section className="py-32 px-6 sm:px-10 border-t border-border bg-obsidian/40">
