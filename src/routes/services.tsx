@@ -15,10 +15,10 @@ export const Route = createFileRoute("/services")({
 });
 
 const tiers = [
-  { name: "Launch", ngn: "80,000", gbp: "45", period: "Landing page · from", desc: "A single, high-impact landing page for product launches, campaigns and lead capture. Shipped in 1–2 weeks.", includes: ["Custom landing page", "Mobile-first design", "Contact / lead form", "Basic SEO & analytics", "1 round of revisions"], featured: false },
-  { name: "Signature", ngn: "250,000", gbp: "130", period: "Full website · from", desc: "Our flagship engagement. A complete multi-page website with motion, CMS and engineering done in-studio.", includes: ["Up to 10 bespoke pages", "CMS so you can edit content", "Custom motion & micro-interactions", "On-page SEO + performance", "3 months post-launch care"], featured: true },
-  { name: "Platform", ngn: "500,000", gbp: "270", period: "Web app / shop · from", desc: "Web apps, dashboards and e-commerce stores with secure payments, accounts and admin tools.", includes: ["User auth & accounts", "Database & admin panel", "Payments & checkout", "Third-party integrations", "6 months priority support"], featured: false },
-  { name: "Mobile", ngn: "900,000", gbp: "480", period: "iOS + Android · from", desc: "Cross-platform mobile apps that feel native. From MVP to App Store and Play Store launch.", includes: ["iOS + Android build", "Push notifications", "Offline-friendly UX", "Store submission", "Ongoing version updates"], featured: false },
+  { name: "Launch", ngn: "150,000", gbp: "80", period: "Landing page · from", desc: "A single, high-impact landing page for product launches, campaigns and lead capture. Shipped in 1–2 weeks.", includes: ["Custom landing page", "Mobile-first design", "Contact / lead form", "Basic SEO & analytics", "1 round of revisions"], featured: false },
+  { name: "Signature", ngn: "412,000", gbp: "220", period: "Full website · from", desc: "Our flagship engagement. A complete multi-page website with motion, CMS and engineering done in-studio.", includes: ["Up to 10 bespoke pages", "CMS so you can edit content", "Custom motion & micro-interactions", "On-page SEO + performance", "3 months post-launch care"], featured: true },
+  { name: "Platform", ngn: "650,000", gbp: "350", period: "Web app / shop · from", desc: "Web apps, dashboards and e-commerce stores with secure payments, accounts and admin tools.", includes: ["User auth & accounts", "Database & admin panel", "Payments & checkout", "Third-party integrations", "6 months priority support"], featured: false },
+  { name: "Mobile", ngn: "1,150,000", gbp: "620", period: "iOS + Android · from", desc: "Cross-platform mobile apps that feel native. From MVP to App Store and Play Store launch.", includes: ["iOS + Android build", "Push notifications", "Offline-friendly UX", "Store submission", "Ongoing version updates"], featured: false },
 ];
 
 
