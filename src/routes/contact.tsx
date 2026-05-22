@@ -1,7 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useMemo, useState } from "react";
+import { useServerFn } from "@tanstack/react-start";
 import { Reveal } from "@/components/Reveal";
 import { budgetRanges, contactMethods, contactInfo, services as serviceList } from "@/lib/content";
+import { countries } from "@/lib/countries";
+import { submitContact } from "@/lib/contact.functions";
+import { toast } from "sonner";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -15,18 +19,56 @@ export const Route = createFileRoute("/contact")({
 });
 
 const tiers = serviceList.map((s) => s.title);
+const defaultCountry = countries.find((c) => c.code === "NG") ?? countries[0];
 
 function ContactPage() {
+  const submit = useServerFn(submitContact);
   const [sent, setSent] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [countryCode, setCountryCode] = useState(defaultCountry.code);
   const [data, setData] = useState({
     name: "",
     email: "",
     company: "",
+    phone: "",
     tier: "",
     budget: "",
     contactMethod: "whatsapp",
     message: "",
   });
+
+  const country = useMemo(
+    () => countries.find((c) => c.code === countryCode) ?? defaultCountry,
+    [countryCode],
+  );
+
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    if (submitting) return;
+    setSubmitting(true);
+    try {
+      await submit({
+        data: {
+          name: data.name,
+          email: data.email,
+          company: data.company,
+          countryCode: country.dial,
+          countryName: country.name,
+          phone: data.phone,
+          tier: data.tier,
+          budget: data.budget,
+          contactMethod: data.contactMethod,
+          message: data.message,
+        },
+      });
+      setSent(true);
+    } catch (err) {
+      console.error(err);
+      toast.error("Could not send your brief. Please try again or reach us on WhatsApp.");
+    } finally {
+      setSubmitting(false);
+    }
+  }
 
   return (
     <>
@@ -53,13 +95,41 @@ function ContactPage() {
                 <p className="text-foreground/70 max-w-md mx-auto">We&rsquo;ll reach out via your preferred channel within 48 hours with next steps. Thank you for thinking of SETAL.</p>
               </div>
             ) : (
-              <form
-                onSubmit={(e) => { e.preventDefault(); setSent(true); }}
-                className="space-y-8"
-              >
+              <form onSubmit={handleSubmit} className="space-y-8">
                 <Field label="Your name" value={data.name} onChange={(v) => setData({ ...data, name: v })} maxLength={100} />
                 <Field label="Email" type="email" value={data.email} onChange={(v) => setData({ ...data, email: v })} maxLength={255} />
                 <Field label="Company (optional)" value={data.company} onChange={(v) => setData({ ...data, company: v })} required={false} maxLength={100} />
+
+                {/* Phone with country code */}
+                <div>
+                  <label className="block font-mono text-[10px] uppercase tracking-[0.3em] text-accent mb-3">Phone number</label>
+                  <div className="flex gap-3 border-b border-border focus-within:border-accent transition-colors pb-2">
+                    <div className="relative">
+                      <select
+                        value={countryCode}
+                        onChange={(e) => setCountryCode(e.target.value)}
+                        aria-label="Country"
+                        className="appearance-none bg-transparent text-base sm:text-lg font-serif italic outline-none pr-7 cursor-pointer max-w-[10rem]"
+                      >
+                        {countries.map((c) => (
+                          <option key={c.code} value={c.code} className="bg-background text-foreground">
+                            {c.flag} {c.name} ({c.dial})
+                          </option>
+                        ))}
+                      </select>
+                      <svg viewBox="0 0 12 8" className="size-3 absolute right-1 top-1/2 -translate-y-1/2 pointer-events-none opacity-60"><path d="M1 1l5 5 5-5" stroke="currentColor" strokeWidth="1.5" fill="none" /></svg>
+                    </div>
+                    <span className="font-serif italic text-base sm:text-lg text-foreground/70 self-center">{country.dial}</span>
+                    <input
+                      type="tel"
+                      value={data.phone}
+                      onChange={(e) => setData({ ...data, phone: e.target.value.replace(/[^\d\s-]/g, "") })}
+                      maxLength={20}
+                      placeholder="704 678 7443"
+                      className="flex-1 bg-transparent text-base sm:text-lg font-serif italic outline-none placeholder:text-muted-foreground/40 min-w-0"
+                    />
+                  </div>
+                </div>
 
                 <div>
                   <label className="block font-mono text-[10px] uppercase tracking-[0.3em] text-accent mb-4">Service tier</label>
@@ -130,9 +200,10 @@ function ContactPage() {
 
                 <button
                   type="submit"
-                  className="group relative overflow-hidden inline-flex items-center gap-3 rounded-full bg-foreground text-background px-8 py-4 font-mono text-xs uppercase tracking-[0.25em] shadow-luxe hover:shadow-glow transition-shadow"
+                  disabled={submitting}
+                  className="group relative overflow-hidden inline-flex items-center gap-3 rounded-full bg-foreground text-background px-8 py-4 font-mono text-xs uppercase tracking-[0.25em] shadow-luxe hover:shadow-glow transition-shadow disabled:opacity-60"
                 >
-                  <span className="relative z-10">Send brief</span>
+                  <span className="relative z-10">{submitting ? "Sending..." : "Send brief"}</span>
                   <svg viewBox="0 0 20 20" className="size-4 relative z-10"><path d="M4 10h12m-4-4l4 4-4 4" fill="none" stroke="currentColor" strokeWidth="1.5" /></svg>
                   <span className="absolute inset-0 bg-gradient-chromatic translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
                 </button>

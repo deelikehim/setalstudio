@@ -1,6 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import portrait from "@/assets/portrait.jpg";
-import work3 from "@/assets/work-3.jpg";
 import { Reveal } from "@/components/Reveal";
 import { Counter } from "@/components/Counter";
 import { awards } from "@/lib/content";
@@ -16,9 +14,12 @@ export const Route = createFileRoute("/about")({
   component: AboutPage,
 });
 
-const team = [
-  { name: "Setal Amari", role: "Founder, Creative Director", img: portrait },
-  { name: "Yuna Sato", role: "Design Lead", img: work3 },
+const setalAcronym = [
+  { letter: "S", word: "Synergy", desc: "Seamless collaboration and integration — design, engineering and strategy moving as one." },
+  { letter: "E", word: "Elite", desc: "The best of the best. We accept only the work we can ship at the highest standard." },
+  { letter: "T", word: "Team", desc: "A quality group of advanced programmers, designers and strategists behind every launch." },
+  { letter: "A", word: "Affluent", desc: "Wealthy, high-value craft built to elevate brands and the businesses they serve." },
+  { letter: "L", word: "Luxury", desc: "Premium, high-ticket positioning — the kind of work clients are proud to put their name on." },
 ];
 
 function AboutPage() {
@@ -52,33 +53,31 @@ function AboutPage() {
         </div>
       </section>
 
-      {/* Team */}
+      {/* SETAL acronym */}
       <section className="py-24 px-6 sm:px-10 border-t border-border">
         <div className="max-w-[1600px] mx-auto">
           <Reveal>
-            <div className="flex justify-between items-end mb-16">
-              <h2 className="font-display text-5xl md:text-7xl font-extrabold tracking-tighter">The hands.</h2>
-              <span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">7 / Permanent staff</span>
+            <div className="mb-16">
+              <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent mb-4">[ The name ]</p>
+              <h2 className="font-display text-5xl md:text-7xl font-extrabold tracking-tighter">
+                What <span className="italic font-serif font-medium text-gradient">SETAL</span> stands for.
+              </h2>
             </div>
           </Reveal>
-          <div className="grid md:grid-cols-2 gap-10">
-            {team.map((m, i) => (
-              <Reveal key={m.name} delay={i * 100}>
-                <div className="group">
-                  <div className="relative overflow-hidden rounded-md aspect-[4/5] bg-card border border-border">
-                    <img src={m.img} alt={m.name} width={1000} height={1300} loading="lazy" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/30 to-transparent" />
-                    <div className="absolute bottom-0 p-8">
-                      <h3 className="font-display text-3xl font-extrabold">{m.name}</h3>
-                      <p className="font-mono text-[10px] uppercase tracking-widest text-accent mt-2">{m.role}</p>
-                    </div>
-                  </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-px bg-border border border-border rounded-md overflow-hidden">
+            {setalAcronym.map((a, i) => (
+              <Reveal key={a.letter} delay={i * 80}>
+                <div className="p-6 sm:p-8 bg-background h-full">
+                  <p className="font-display text-7xl sm:text-8xl font-extrabold tracking-tighter text-gradient leading-none mb-4">{a.letter}</p>
+                  <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent mb-3">{a.word}</p>
+                  <p className="text-sm text-foreground/70 leading-relaxed">{a.desc}</p>
                 </div>
               </Reveal>
             ))}
           </div>
         </div>
       </section>
+
 
       {/* Numbers */}
       <section className="py-32 px-6 sm:px-10 border-t border-border bg-obsidian/40">

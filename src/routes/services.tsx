@@ -15,10 +15,10 @@ export const Route = createFileRoute("/services")({
 });
 
 const tiers = [
-  { name: "Launch", ngn: "80,000", gbp: "45", period: "Landing page · from", desc: "A single, high-impact landing page for product launches, campaigns and lead capture. Shipped in 1–2 weeks.", includes: ["Custom landing page", "Mobile-first design", "Contact / lead form", "Basic SEO & analytics", "1 round of revisions"], featured: false },
-  { name: "Signature", ngn: "250,000", gbp: "130", period: "Full website · from", desc: "Our flagship engagement. A complete multi-page website with motion, CMS and engineering done in-studio.", includes: ["Up to 10 bespoke pages", "CMS so you can edit content", "Custom motion & micro-interactions", "On-page SEO + performance", "3 months post-launch care"], featured: true },
-  { name: "Platform", ngn: "500,000", gbp: "270", period: "Web app / shop · from", desc: "Web apps, dashboards and e-commerce stores with secure payments, accounts and admin tools.", includes: ["User auth & accounts", "Database & admin panel", "Payments & checkout", "Third-party integrations", "6 months priority support"], featured: false },
-  { name: "Mobile", ngn: "900,000", gbp: "480", period: "iOS + Android · from", desc: "Cross-platform mobile apps that feel native. From MVP to App Store and Play Store launch.", includes: ["iOS + Android build", "Push notifications", "Offline-friendly UX", "Store submission", "Ongoing version updates"], featured: false },
+  { name: "Launch", ngn: "150,000", gbp: "80", period: "Landing page · from", desc: "A single, high-impact landing page for product launches, campaigns and lead capture. Shipped in 1–2 weeks.", includes: ["Custom landing page", "Mobile-first design", "Contact / lead form", "Basic SEO & analytics", "1 round of revisions"], featured: false },
+  { name: "Signature", ngn: "412,000", gbp: "220", period: "Full website · from", desc: "Our flagship engagement. A complete multi-page website with motion, CMS and engineering done in-studio.", includes: ["Up to 10 bespoke pages", "CMS so you can edit content", "Custom motion & micro-interactions", "On-page SEO + performance", "3 months post-launch care"], featured: true },
+  { name: "Platform", ngn: "650,000", gbp: "350", period: "Web app / shop · from", desc: "Web apps, dashboards and e-commerce stores with secure payments, accounts and admin tools.", includes: ["User auth & accounts", "Database & admin panel", "Payments & checkout", "Third-party integrations", "6 months priority support"], featured: false },
+  { name: "Mobile", ngn: "1,150,000", gbp: "620", period: "iOS + Android · from", desc: "Cross-platform mobile apps that feel native. From MVP to App Store and Play Store launch.", includes: ["iOS + Android build", "Push notifications", "Offline-friendly UX", "Store submission", "Ongoing version updates"], featured: false },
 ];
 
 
@@ -39,31 +39,33 @@ function ServicesPage() {
       </section>
 
       {/* Services Grid */}
-      <section className="px-6 sm:px-10 pb-32">
-        <div className="max-w-[1600px] mx-auto grid md:grid-cols-2 gap-px bg-border border border-border rounded-md overflow-hidden">
+      <section className="px-4 sm:px-10 pb-32">
+        <div className="max-w-[1600px] mx-auto grid sm:grid-cols-2 gap-px bg-border border border-border rounded-md overflow-hidden">
           {services.map((s, i) => (
             <Reveal key={s.no} delay={i * 60}>
-              <div className="p-10 md:p-12 bg-background h-full group hover:bg-card transition-colors">
-                <div className="flex justify-between items-start mb-8">
+              <div className="p-6 sm:p-10 md:p-12 bg-background h-full group hover:bg-card transition-colors">
+                <div className="flex justify-between items-start mb-6 sm:mb-8">
                   <span className="font-mono text-xs text-accent">{s.no}</span>
-                  <span className="size-10 rounded-full border border-border grid place-items-center group-hover:bg-gradient-chromatic group-hover:border-transparent transition-all">
+                  <span className="size-9 sm:size-10 rounded-full border border-border grid place-items-center group-hover:bg-gradient-chromatic group-hover:border-transparent transition-all">
                     <svg viewBox="0 0 20 20" className="size-3"><path d="M4 10h12m-4-4l4 4-4 4" fill="none" stroke="currentColor" strokeWidth="1.5" /></svg>
                   </span>
                 </div>
-                <h3 className="font-display text-4xl md:text-5xl font-extrabold tracking-tight mb-4">{s.title}</h3>
-                <p className="text-foreground/70 leading-relaxed mb-4 max-w-md">{s.desc}</p>
-                <p className="text-sm text-foreground/60 leading-relaxed mb-6 max-w-md">{s.detail}</p>
-                <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-6 pb-6 border-b border-border">
-                  <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">From</span>
-                  <span className="font-display text-2xl font-extrabold text-gradient">₦{s.ngn}</span>
-                  <span className="font-mono text-xs text-foreground/70">≈ £{s.gbp}</span>
-                  <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-accent ml-auto">{s.timeline}</span>
+                <h3 className="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mb-4 break-words">{s.title}</h3>
+                <p className="text-foreground/70 leading-relaxed mb-4 max-w-md text-sm sm:text-base">{s.desc}</p>
+                <p className="text-xs sm:text-sm text-foreground/60 leading-relaxed mb-6 max-w-md">{s.detail}</p>
+                <div className="mb-6 pb-6 border-b border-border">
+                  <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                    <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">From</span>
+                    <span className="font-display text-xl sm:text-2xl font-extrabold text-gradient break-all">₦{s.ngn}</span>
+                    <span className="font-mono text-xs text-foreground/70">≈ £{s.gbp}</span>
+                  </div>
+                  <p className="mt-2 font-mono text-[10px] uppercase tracking-[0.25em] text-accent">{s.timeline}</p>
                 </div>
                 <ul className="space-y-2">
                   {s.deliverables.map((d) => (
-                    <li key={d} className="flex items-center gap-3 font-mono text-xs uppercase tracking-widest text-muted-foreground">
-                      <span className="size-1 rounded-full bg-accent" />
-                      {d}
+                    <li key={d} className="flex items-center gap-3 font-mono text-[10px] sm:text-xs uppercase tracking-widest text-muted-foreground">
+                      <span className="size-1 rounded-full bg-accent shrink-0" />
+                      <span className="break-words">{d}</span>
                     </li>
                   ))}
                 </ul>
@@ -72,6 +74,7 @@ function ServicesPage() {
           ))}
         </div>
       </section>
+
 
       {/* Pricing */}
       <section className="py-32 px-6 sm:px-10 border-t border-border bg-obsidian/40">
