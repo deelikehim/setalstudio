@@ -1,5 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { services, contactInfo } from "@/lib/content";
+import { services, contactInfo, type Service } from "@/lib/content";
 import { Reveal } from "@/components/Reveal";
 
 export const Route = createFileRoute("/services/$slug")({
