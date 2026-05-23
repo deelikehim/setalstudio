@@ -40,14 +40,22 @@ export const stats: { value: number; suffix: string; label: string; prefix?: str
 ];
 
 export type Service = {
+  slug: string;
   no: string;
   title: string;
+  tagline: string;
   desc: string;
   detail: string;
   deliverables: string[];
   ngn: string;
   gbp: string;
   timeline: string;
+  hero: string;
+  gallery: string[];
+  benefits: { title: string; body: string }[];
+  process: { step: string; title: string; body: string }[];
+  idealFor: string[];
+  faqs: { q: string; a: string }[];
 };
 
 export const services: Service[] = [
