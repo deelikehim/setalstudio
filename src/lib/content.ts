@@ -301,6 +301,7 @@ export const contactInfo = {
   phoneTel: "tel:+2347046787443",
   whatsapp: "https://wa.me/2347046787443",
   telegram: "https://t.me/+2347046787443",
+  calendar: "https://cal.com/setalstudio/intro",
 };
 
 export const budgetRanges = [
