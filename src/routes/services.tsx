@@ -43,7 +43,11 @@ function ServicesPage() {
         <div className="max-w-[1600px] mx-auto grid sm:grid-cols-2 gap-px bg-border border border-border rounded-md overflow-hidden">
           {services.map((s, i) => (
             <Reveal key={s.no} delay={i * 60}>
-              <div className="p-6 sm:p-10 md:p-12 bg-background h-full group hover:bg-card transition-colors">
+              <Link
+                to="/services/$slug"
+                params={{ slug: s.slug }}
+                className="block p-6 sm:p-10 md:p-12 bg-background h-full group hover:bg-card transition-colors"
+              >
                 <div className="flex justify-between items-start mb-6 sm:mb-8">
                   <span className="font-mono text-xs text-accent">{s.no}</span>
                   <span className="size-9 sm:size-10 rounded-full border border-border grid place-items-center group-hover:bg-gradient-chromatic group-hover:border-transparent transition-all">
@@ -61,7 +65,7 @@ function ServicesPage() {
                   </div>
                   <p className="mt-2 font-mono text-[10px] uppercase tracking-[0.25em] text-accent">{s.timeline}</p>
                 </div>
-                <ul className="space-y-2">
+                <ul className="space-y-2 mb-6">
                   {s.deliverables.map((d) => (
                     <li key={d} className="flex items-center gap-3 font-mono text-[10px] sm:text-xs uppercase tracking-widest text-muted-foreground">
                       <span className="size-1 rounded-full bg-accent shrink-0" />
@@ -69,7 +73,11 @@ function ServicesPage() {
                     </li>
                   ))}
                 </ul>
-              </div>
+                <span className="inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.25em] text-accent group-hover:gap-3 transition-all">
+                  Explore service
+                  <svg viewBox="0 0 20 20" className="size-3"><path d="M4 10h12m-4-4l4 4-4 4" fill="none" stroke="currentColor" strokeWidth="1.5" /></svg>
+                </span>
+              </Link>
             </Reveal>
           ))}
         </div>
