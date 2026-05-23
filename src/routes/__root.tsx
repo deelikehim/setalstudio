@@ -9,6 +9,7 @@ import {
 } from "@tanstack/react-router";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
+import { FloatingCTA } from "@/components/FloatingCTA";
 
 import appCss from "../styles.css?url";
 
@@ -126,6 +127,7 @@ function RootComponent() {
           <Outlet />
         </main>
         <Footer />
+        <FloatingCTA />
       </div>
     </QueryClientProvider>
   );

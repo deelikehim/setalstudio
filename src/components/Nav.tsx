@@ -1,5 +1,6 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
+import { Logo } from "@/components/Logo";
 
 const links = [
   { to: "/", label: "Index" },
@@ -47,7 +48,7 @@ export function Nav() {
       >
         <div className="max-w-[1600px] mx-auto px-6 sm:px-10 flex items-center justify-between">
           <Link to="/" className="group flex items-center gap-3">
-            <div className="relative size-9 rounded-full bg-gradient-chromatic shadow-glow animate-glow-pulse" />
+            <Logo className="size-10" />
             <div className="leading-none">
               <div className="font-display font-extrabold text-xl tracking-tighter">
                 SETAL<span className="text-accent">.</span>

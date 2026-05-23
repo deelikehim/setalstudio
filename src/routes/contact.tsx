@@ -266,6 +266,50 @@ function ContactPage() {
           </Reveal>
         </div>
       </section>
+
+      {/* Calendar booking */}
+      <section id="book-a-call" className="py-24 px-6 sm:px-10 border-t border-border bg-obsidian/40 scroll-mt-32">
+        <div className="max-w-[1400px] mx-auto">
+          <div className="grid lg:grid-cols-12 gap-12 items-start">
+            <div className="lg:col-span-5">
+              <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent mb-6">[ Book a call ]</p>
+              <h2 className="font-display text-4xl md:text-6xl font-extrabold tracking-tighter mb-6">
+                Prefer to <span className="italic font-serif font-medium text-gradient">talk</span>?
+              </h2>
+              <p className="text-foreground/70 leading-relaxed mb-8 max-w-md">
+                Pick a 20-minute discovery slot that fits your timezone. We&rsquo;ll listen to your project, share honest direction, and outline next steps.
+              </p>
+              <ul className="space-y-3 text-sm text-foreground/70 mb-8">
+                <li className="flex items-center gap-3"><span className="size-1.5 rounded-full bg-gradient-chromatic" /> 20 minutes · free of charge</li>
+                <li className="flex items-center gap-3"><span className="size-1.5 rounded-full bg-gradient-chromatic" /> Google Meet · WhatsApp · Zoom</li>
+                <li className="flex items-center gap-3"><span className="size-1.5 rounded-full bg-gradient-chromatic" /> No sales script. Just a real conversation.</li>
+              </ul>
+              <a
+                href={contactInfo.calendar}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-3 rounded-full bg-foreground text-background px-8 py-4 font-mono text-xs uppercase tracking-[0.25em] shadow-luxe hover:shadow-glow transition-shadow"
+              >
+                <span>Open the calendar</span>
+                <svg viewBox="0 0 20 20" className="size-4"><path d="M4 10h12m-4-4l4 4-4 4" fill="none" stroke="currentColor" strokeWidth="1.5" /></svg>
+              </a>
+            </div>
+            <div className="lg:col-span-7">
+              <div className="rounded-md border border-border overflow-hidden bg-background shadow-luxe">
+                <iframe
+                  src={contactInfo.calendar}
+                  title="Book a call with SETAL Studio"
+                  className="w-full h-[640px] bg-background"
+                  loading="lazy"
+                />
+              </div>
+              <p className="mt-3 font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground text-center">
+                Calendar by Cal.com · all times shown in your local timezone
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
