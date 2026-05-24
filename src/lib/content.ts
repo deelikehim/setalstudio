@@ -267,11 +267,10 @@ export const testimonials = [
 ];
 
 export const awards = [
-  { year: "2025", title: "Site of the Year", org: "Awwwards", project: "Aeterna" },
-  { year: "2025", title: "Best E-commerce Site", org: "CSS Design Awards", project: "Aeterna" },
-  { year: "2024", title: "FWA of the Day", org: "The FWA", project: "Valentine" },
-  { year: "2023", title: "Mobile Excellence", org: "Awwwards", project: "Elixir" },
-  { year: "2022", title: "Developer Award", org: "The FWA", project: "Meridian" },
+  { year: "2025", title: "Best E-commerce Experience", org: "CSS Design Awards", project: "Aeterna" },
+  { year: "2024", title: "Mobile Excellence", org: "Awwwards", project: "Elixir" },
+  { year: "2023", title: "Developer Award", org: "The FWA", project: "Meridian" },
+  { year: "2022", title: "Innovation in WebGL", org: "Awwwards", project: "Obsidian" },
 ];
 
 export const faqs = [
