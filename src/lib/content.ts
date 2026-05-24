@@ -28,7 +28,7 @@ export const projects: Project[] = [
   { slug: "obsidian", client: "Obsidian Motors", title: "Engineered desire", category: "Automotive / Site", year: "2024", image: work4, span: "md:col-span-4" },
   { slug: "elixir", client: "Maison Elixir", title: "Bottled prestige", category: "Fragrance / D2C", year: "2024", image: work5, span: "md:col-span-3" },
   { slug: "noir", client: "Noir Cuisine", title: "Three Michelin stars", category: "Hospitality / Bookings", year: "2023", image: work6, span: "md:col-span-5" },
-  { slug: "barkyardspot", client: "Barkyards Pot", title: "Pet wellness marketplace", category: "Website / E-commerce", year: "2025", image: workBarkyardspot, span: "md:col-span-6", url: "https://barkyardspot.lovable.app" },
+  { slug: "barkyardspot", client: "Barkyard Spot", title: "Premium lounge experience", category: "Website / Lifestyle", year: "2025", image: workBarkyardspot, span: "md:col-span-6", url: "https://barkyardspot.lovable.app" },
   { slug: "climaxclub", client: "Climax Club", title: "Private members experience", category: "Website / Lifestyle", year: "2025", image: workClimaxclub, span: "md:col-span-6", url: "https://climaxclub-zdvqacav.manus.space" },
 ];
 
@@ -267,10 +267,11 @@ export const testimonials = [
 ];
 
 export const awards = [
-  { year: "2025", title: "Best E-commerce Experience", org: "CSS Design Awards", project: "Aeterna" },
-  { year: "2024", title: "Mobile Excellence", org: "Awwwards", project: "Elixir" },
-  { year: "2023", title: "Developer Award", org: "The FWA", project: "Meridian" },
-  { year: "2022", title: "Innovation in WebGL", org: "Awwwards", project: "Obsidian" },
+  { year: "2026", title: "Awwwards Site of the Day", org: "Awwwards", project: "In Pursuit" },
+  { year: "2026", title: "CSS Design Awards — Best UI/UX", org: "CSS Design Awards", project: "In Pursuit" },
+  { year: "2026", title: "The FWA — Site of the Day", org: "The FWA", project: "In Pursuit" },
+  { year: "2027", title: "Webby Awards — Best Visual Design", org: "Webby Awards", project: "In Pursuit" },
+  { year: "2027", title: "Cannes Lions — Digital Craft", org: "Cannes Lions", project: "In Pursuit" },
 ];
 
 export const faqs = [

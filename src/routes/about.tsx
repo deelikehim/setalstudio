@@ -83,8 +83,8 @@ function AboutPage() {
       <section className="py-32 px-6 sm:px-10 border-t border-border bg-obsidian/40">
         <div className="max-w-[1600px] mx-auto grid md:grid-cols-3 gap-12">
           {[
-            { v: 2019, label: "Founded in Lagos", suffix: "" },
-            { v: 14, label: "Countries shipped to", suffix: "" },
+            { v: 2026, label: "Founded in Lagos", suffix: "" },
+            { v: 5, label: "Continents served", suffix: "" },
             { v: 12, label: "Projects per year, by choice", suffix: "" },
           ].map((s, i) => (
             <Reveal key={i} delay={i * 100}>
@@ -103,7 +103,7 @@ function AboutPage() {
           <Reveal>
             <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent mb-4">[ Recognition ]</p>
             <h2 className="font-display text-5xl md:text-7xl font-extrabold tracking-tighter mb-16">
-              Quietly <span className="italic font-serif font-medium text-gradient">decorated</span>.
+              Awards we are <span className="italic font-serif font-medium text-gradient">pursuing</span>.
             </h2>
           </Reveal>
           <div className="space-y-px">
