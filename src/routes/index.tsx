@@ -248,10 +248,10 @@ function HomePage() {
           <Reveal>
             <div className="flex justify-between items-end mb-12">
               <h2 className="font-display text-4xl md:text-5xl font-extrabold tracking-tighter">
-                Awards, in passing.
+                Awards we are pursuing.
               </h2>
               <span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
-                {awards.length} / Selected
+                {awards.length} / Upcoming
               </span>
             </div>
           </Reveal>
