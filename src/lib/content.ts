@@ -4,6 +4,8 @@ import work3 from "@/assets/work-3.jpg";
 import work4 from "@/assets/work-4.jpg";
 import work5 from "@/assets/work-5.jpg";
 import work6 from "@/assets/work-6.jpg";
+import workBarkyardspot from "@/assets/work-barkyardspot.png";
+import workClimaxclub from "@/assets/work-climaxclub.png";
 import hero from "@/assets/hero.jpg";
 import portrait from "@/assets/portrait.jpg";
 
@@ -16,15 +18,18 @@ export type Project = {
   image: string;
   span: string;
   award?: string;
+  url?: string;
 };
 
 export const projects: Project[] = [
-  { slug: "aeterna", client: "Aeterna Horology", title: "Time, rewritten", category: "E-commerce / WebGL", year: "2025", image: work1, span: "md:col-span-7 md:row-span-2", award: "Awwwards SOTD" },
+  { slug: "aeterna", client: "Aeterna Horology", title: "Time, rewritten", category: "E-commerce / WebGL", year: "2025", image: work1, span: "md:col-span-7 md:row-span-2" },
   { slug: "vesta", client: "Skyline Vesta", title: "Vertical living", category: "Real Estate / Identity", year: "2025", image: work2, span: "md:col-span-5" },
-  { slug: "valentine", client: "Maison Valentine", title: "Editorial couture", category: "Fashion / Brand", year: "2024", image: work3, span: "md:col-span-5", award: "FWA" },
+  { slug: "valentine", client: "Maison Valentine", title: "Editorial couture", category: "Fashion / Brand", year: "2024", image: work3, span: "md:col-span-5" },
   { slug: "obsidian", client: "Obsidian Motors", title: "Engineered desire", category: "Automotive / Site", year: "2024", image: work4, span: "md:col-span-4" },
   { slug: "elixir", client: "Maison Elixir", title: "Bottled prestige", category: "Fragrance / D2C", year: "2024", image: work5, span: "md:col-span-3" },
-  { slug: "noir", client: "Noir Cuisine", title: "Three Michelin stars", category: "Hospitality / Bookings", year: "2023", image: work6, span: "md:col-span-5", award: "CSS Design Award" },
+  { slug: "noir", client: "Noir Cuisine", title: "Three Michelin stars", category: "Hospitality / Bookings", year: "2023", image: work6, span: "md:col-span-5" },
+  { slug: "barkyardspot", client: "Barkyards Pot", title: "Pet wellness marketplace", category: "Website / E-commerce", year: "2025", image: workBarkyardspot, span: "md:col-span-6", url: "https://barkyardspot.lovable.app" },
+  { slug: "climaxclub", client: "Climax Club", title: "Private members experience", category: "Website / Lifestyle", year: "2025", image: workClimaxclub, span: "md:col-span-6", url: "https://climaxclub-zdvqacav.manus.space" },
 ];
 
 export const clients = [
@@ -262,11 +267,10 @@ export const testimonials = [
 ];
 
 export const awards = [
-  { year: "2025", title: "Site of the Year", org: "Awwwards", project: "Aeterna" },
-  { year: "2025", title: "Best E-commerce Site", org: "CSS Design Awards", project: "Aeterna" },
-  { year: "2024", title: "FWA of the Day", org: "The FWA", project: "Valentine" },
-  { year: "2023", title: "Mobile Excellence", org: "Awwwards", project: "Elixir" },
-  { year: "2022", title: "Developer Award", org: "The FWA", project: "Meridian" },
+  { year: "2025", title: "Best E-commerce Experience", org: "CSS Design Awards", project: "Aeterna" },
+  { year: "2024", title: "Mobile Excellence", org: "Awwwards", project: "Elixir" },
+  { year: "2023", title: "Developer Award", org: "The FWA", project: "Meridian" },
+  { year: "2022", title: "Innovation in WebGL", org: "Awwwards", project: "Obsidian" },
 ];
 
 export const faqs = [
