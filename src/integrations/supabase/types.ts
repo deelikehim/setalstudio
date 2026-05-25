@@ -62,6 +62,51 @@ export type Database = {
         }
         Relationships: []
       }
+      scheduled_calls: {
+        Row: {
+          country_code: string | null
+          country_name: string | null
+          created_at: string
+          email: string
+          id: string
+          name: string
+          notes: string | null
+          phone: string | null
+          preferred_date: string
+          preferred_time: string
+          status: string
+          timezone: string | null
+        }
+        Insert: {
+          country_code?: string | null
+          country_name?: string | null
+          created_at?: string
+          email: string
+          id?: string
+          name: string
+          notes?: string | null
+          phone?: string | null
+          preferred_date: string
+          preferred_time: string
+          status?: string
+          timezone?: string | null
+        }
+        Update: {
+          country_code?: string | null
+          country_name?: string | null
+          created_at?: string
+          email?: string
+          id?: string
+          name?: string
+          notes?: string | null
+          phone?: string | null
+          preferred_date?: string
+          preferred_time?: string
+          status?: string
+          timezone?: string | null
+        }
+        Relationships: []
+      }
       user_roles: {
         Row: {
           created_at: string
