@@ -5,6 +5,7 @@ import { Reveal } from "@/components/Reveal";
 import { budgetRanges, contactMethods, contactInfo, services as serviceList } from "@/lib/content";
 import { countries } from "@/lib/countries";
 import { submitContact } from "@/lib/contact.functions";
+import { bookCall } from "@/lib/booking.functions";
 import { toast } from "sonner";
 
 export const Route = createFileRoute("/contact")({
