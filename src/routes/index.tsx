@@ -26,6 +26,14 @@ const avatars = [avatar1, avatar2, avatar3];
 function HomePage() {
   const [activeTest, setActiveTest] = useState(0);
 
+  useEffect(() => {
+    const id = setInterval(() => {
+      setActiveTest((i) => (i + 1) % testimonials.length);
+    }, 5500);
+    return () => clearInterval(id);
+  }, []);
+
+
   return (
     <>
       {/* ─────────── HERO ─────────── */}
