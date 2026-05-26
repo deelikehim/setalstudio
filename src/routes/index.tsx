@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import heroImg from "@/assets/hero.jpg";
-import portrait from "@/assets/portrait.jpg";
+
 import avatar1 from "@/assets/avatar-1.jpg";
 import avatar2 from "@/assets/avatar-2.jpg";
 import avatar3 from "@/assets/avatar-3.jpg";
@@ -8,7 +8,7 @@ import { Marquee } from "@/components/Marquee";
 import { Reveal } from "@/components/Reveal";
 import { Counter } from "@/components/Counter";
 import { projects, clients, stats, testimonials, awards, processSteps } from "@/lib/content";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -25,6 +25,14 @@ const avatars = [avatar1, avatar2, avatar3];
 
 function HomePage() {
   const [activeTest, setActiveTest] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setActiveTest((i) => (i + 1) % testimonials.length);
+    }, 5500);
+    return () => clearInterval(id);
+  }, []);
+
 
   return (
     <>
@@ -270,29 +278,16 @@ function HomePage() {
         </div>
       </section>
 
-      {/* ─────────── PORTRAIT CTA ─────────── */}
+      {/* ─────────── FOUNDER CTA ─────────── */}
       <section className="py-32 px-6 sm:px-10 border-t border-border">
-        <div className="max-w-[1600px] mx-auto grid md:grid-cols-12 gap-12 items-center">
-          <Reveal className="md:col-span-5">
-            <div className="relative">
-              <div className="absolute -inset-4 bg-gradient-chromatic blur-3xl opacity-30" />
-              <img
-                src={portrait}
-                alt="Studio founder"
-                width={1000}
-                height={1300}
-                loading="lazy"
-                className="relative w-full aspect-[4/5] object-cover rounded-md border border-border"
-              />
-            </div>
-          </Reveal>
-          <Reveal delay={150} className="md:col-span-7">
-            <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent mb-6">[ 05 ] The Founder</p>
+        <div className="max-w-4xl mx-auto text-center">
+          <Reveal>
+            <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent mb-6">[ 05 ] The Studio</p>
             <h2 className="font-display text-5xl md:text-7xl font-extrabold tracking-tighter mb-8">
               Designed by hand.<br />
               <span className="italic font-serif font-medium text-gradient">Engineered with intent.</span>
             </h2>
-            <p className="text-lg text-foreground/70 leading-relaxed mb-10 max-w-xl">
+            <p className="text-lg text-foreground/70 leading-relaxed mb-10 max-w-2xl mx-auto">
               SETAL is a deliberately small studio. We take on twelve projects a year &mdash; never more. Every engagement involves the founder directly, from the first sketch to the final pixel that ships.
             </p>
             <Link to="/about" className="inline-flex items-center gap-3 group">
@@ -304,6 +299,7 @@ function HomePage() {
           </Reveal>
         </div>
       </section>
+
     </>
   );
 }

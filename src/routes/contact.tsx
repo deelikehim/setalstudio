@@ -5,6 +5,7 @@ import { Reveal } from "@/components/Reveal";
 import { budgetRanges, contactMethods, contactInfo, services as serviceList } from "@/lib/content";
 import { countries } from "@/lib/countries";
 import { submitContact } from "@/lib/contact.functions";
+import { bookCall } from "@/lib/booking.functions";
 import { toast } from "sonner";
 
 export const Route = createFileRoute("/contact")({
@@ -267,50 +268,175 @@ function ContactPage() {
         </div>
       </section>
 
-      {/* Calendar booking */}
-      <section id="book-a-call" className="py-24 px-6 sm:px-10 border-t border-border bg-obsidian/40 scroll-mt-32">
-        <div className="max-w-[1400px] mx-auto">
-          <div className="grid lg:grid-cols-12 gap-12 items-start">
-            <div className="lg:col-span-5">
-              <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent mb-6">[ Book a call ]</p>
-              <h2 className="font-display text-4xl md:text-6xl font-extrabold tracking-tighter mb-6">
-                Prefer to <span className="italic font-serif font-medium text-gradient">talk</span>?
-              </h2>
-              <p className="text-foreground/70 leading-relaxed mb-8 max-w-md">
-                Pick a 20-minute discovery slot that fits your timezone. We&rsquo;ll listen to your project, share honest direction, and outline next steps.
-              </p>
-              <ul className="space-y-3 text-sm text-foreground/70 mb-8">
-                <li className="flex items-center gap-3"><span className="size-1.5 rounded-full bg-gradient-chromatic" /> 20 minutes · free of charge</li>
-                <li className="flex items-center gap-3"><span className="size-1.5 rounded-full bg-gradient-chromatic" /> Google Meet · WhatsApp · Zoom</li>
-                <li className="flex items-center gap-3"><span className="size-1.5 rounded-full bg-gradient-chromatic" /> No sales script. Just a real conversation.</li>
-              </ul>
-              <a
-                href={contactInfo.calendar}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group inline-flex items-center gap-3 rounded-full bg-foreground text-background px-8 py-4 font-mono text-xs uppercase tracking-[0.25em] shadow-luxe hover:shadow-glow transition-shadow"
-              >
-                <span>Open the calendar</span>
-                <svg viewBox="0 0 20 20" className="size-4"><path d="M4 10h12m-4-4l4 4-4 4" fill="none" stroke="currentColor" strokeWidth="1.5" /></svg>
-              </a>
+      {/* Schedule a call */}
+      <ScheduleCall />
+    </>
+  );
+}
+
+const timeSlots = [
+  "09:00", "10:00", "11:00", "12:00",
+  "13:00", "14:00", "15:00", "16:00", "17:00", "18:00",
+];
+
+function ScheduleCall() {
+  const book = useServerFn(bookCall);
+  const [booked, setBooked] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const today = new Date().toISOString().slice(0, 10);
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    date: "",
+    time: "",
+    notes: "",
+  });
+
+  const tz = useMemo(
+    () => (typeof Intl !== "undefined" ? Intl.DateTimeFormat().resolvedOptions().timeZone : ""),
+    [],
+  );
+
+  async function handleBook(e: React.FormEvent) {
+    e.preventDefault();
+    if (submitting) return;
+    if (!form.date || !form.time) {
+      toast.error("Please pick a date and time.");
+      return;
+    }
+    setSubmitting(true);
+    try {
+      await book({
+        data: {
+          name: form.name,
+          email: form.email,
+          phone: form.phone,
+          countryCode: defaultCountry.dial,
+          countryName: defaultCountry.name,
+          preferredDate: form.date,
+          preferredTime: form.time,
+          timezone: tz,
+          notes: form.notes,
+        },
+      });
+      setBooked(true);
+    } catch (err) {
+      console.error(err);
+      toast.error("Could not save your booking. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
+  }
+
+  return (
+    <section id="book-a-call" className="py-24 px-6 sm:px-10 border-t border-border bg-obsidian/40 scroll-mt-32">
+      <div className="max-w-[1400px] mx-auto grid lg:grid-cols-12 gap-12 items-start">
+        <div className="lg:col-span-5">
+          <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent mb-6">[ Book a call ]</p>
+          <h2 className="font-display text-4xl md:text-6xl font-extrabold tracking-tighter mb-6">
+            Prefer to <span className="italic font-serif font-medium text-gradient">talk</span>?
+          </h2>
+          <p className="text-foreground/70 leading-relaxed mb-8 max-w-md">
+            Pick a date and time that suits you. We&rsquo;ll confirm by email within 24 hours and send the meeting link.
+          </p>
+          <ul className="space-y-3 text-sm text-foreground/70">
+            <li className="flex items-center gap-3"><span className="size-1.5 rounded-full bg-gradient-chromatic" /> 20 minutes · free of charge</li>
+            <li className="flex items-center gap-3"><span className="size-1.5 rounded-full bg-gradient-chromatic" /> Google Meet · WhatsApp · Zoom</li>
+            <li className="flex items-center gap-3"><span className="size-1.5 rounded-full bg-gradient-chromatic" /> No sales script. Just a real conversation.</li>
+          </ul>
+        </div>
+
+        <div className="lg:col-span-7">
+          {booked ? (
+            <div className="border-chromatic rounded-md p-10 text-center bg-card">
+              <div className="size-14 rounded-full bg-gradient-chromatic mx-auto mb-5 grid place-items-center">
+                <svg viewBox="0 0 24 24" className="size-7 text-background"><path d="M5 12l5 5L20 7" fill="none" stroke="currentColor" strokeWidth="2.5" /></svg>
+              </div>
+              <h3 className="font-display text-3xl font-extrabold mb-3">Call requested.</h3>
+              <p className="text-foreground/70">We&rsquo;ll email you to confirm <strong className="text-foreground">{form.date}</strong> at <strong className="text-foreground">{form.time}</strong>.</p>
             </div>
-            <div className="lg:col-span-7">
-              <div className="rounded-md border border-border overflow-hidden bg-background shadow-luxe">
-                <iframe
-                  src={contactInfo.calendar}
-                  title="Book a call with SETAL Studio"
-                  className="w-full h-[640px] bg-background"
-                  loading="lazy"
+          ) : (
+            <form onSubmit={handleBook} className="rounded-md border border-border bg-background p-6 sm:p-8 shadow-luxe space-y-6">
+              <div className="grid sm:grid-cols-2 gap-4">
+                <BookField label="Your name" value={form.name} onChange={(v) => setForm({ ...form, name: v })} required maxLength={100} />
+                <BookField label="Email" type="email" value={form.email} onChange={(v) => setForm({ ...form, email: v })} required maxLength={255} />
+              </div>
+              <BookField label="Phone (optional)" type="tel" value={form.phone} onChange={(v) => setForm({ ...form, phone: v })} maxLength={40} />
+
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="block font-mono text-[10px] uppercase tracking-[0.3em] text-accent mb-2">Preferred date</label>
+                  <input
+                    type="date"
+                    min={today}
+                    required
+                    value={form.date}
+                    onChange={(e) => setForm({ ...form, date: e.target.value })}
+                    className="w-full bg-transparent border border-border rounded-md px-3 py-2.5 outline-none focus:border-accent transition-colors"
+                  />
+                </div>
+                <div>
+                  <label className="block font-mono text-[10px] uppercase tracking-[0.3em] text-accent mb-2">Preferred time</label>
+                  <select
+                    required
+                    value={form.time}
+                    onChange={(e) => setForm({ ...form, time: e.target.value })}
+                    className="w-full bg-transparent border border-border rounded-md px-3 py-2.5 outline-none focus:border-accent transition-colors"
+                  >
+                    <option value="" className="bg-background">Select a time</option>
+                    {timeSlots.map((t) => (
+                      <option key={t} value={t} className="bg-background">{t}</option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label className="block font-mono text-[10px] uppercase tracking-[0.3em] text-accent mb-2">What would you like to discuss? (optional)</label>
+                <textarea
+                  rows={4}
+                  maxLength={1000}
+                  value={form.notes}
+                  onChange={(e) => setForm({ ...form, notes: e.target.value })}
+                  className="w-full bg-transparent border border-border rounded-md px-3 py-2.5 outline-none focus:border-accent transition-colors resize-none"
                 />
               </div>
-              <p className="mt-3 font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground text-center">
-                Calendar by Cal.com · all times shown in your local timezone
+
+              <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
+                Timezone detected: {tz || "—"}
               </p>
-            </div>
-          </div>
+
+              <button
+                type="submit"
+                disabled={submitting}
+                className="w-full sm:w-auto group relative overflow-hidden inline-flex items-center gap-3 rounded-full bg-foreground text-background px-7 py-3.5 font-mono text-xs uppercase tracking-[0.25em] shadow-luxe hover:shadow-glow transition-shadow disabled:opacity-60"
+              >
+                <span className="relative z-10">{submitting ? "Booking..." : "Schedule call"}</span>
+                <svg viewBox="0 0 20 20" className="size-4 relative z-10"><path d="M4 10h12m-4-4l4 4-4 4" fill="none" stroke="currentColor" strokeWidth="1.5" /></svg>
+                <span className="absolute inset-0 bg-gradient-chromatic translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
+              </button>
+            </form>
+          )}
         </div>
-      </section>
-    </>
+      </div>
+    </section>
+  );
+}
+
+function BookField({ label, type = "text", value, onChange, required, maxLength }: { label: string; type?: string; value: string; onChange: (v: string) => void; required?: boolean; maxLength?: number }) {
+  return (
+    <div>
+      <label className="block font-mono text-[10px] uppercase tracking-[0.3em] text-accent mb-2">{label}</label>
+      <input
+        type={type}
+        required={required}
+        maxLength={maxLength}
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        className="w-full bg-transparent border border-border rounded-md px-3 py-2.5 outline-none focus:border-accent transition-colors"
+      />
+    </div>
   );
 }
 
