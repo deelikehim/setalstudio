@@ -360,9 +360,9 @@ function ScheduleCall() {
             <form onSubmit={handleBook} className="rounded-md border border-border bg-background p-6 sm:p-8 shadow-luxe space-y-6">
               <div className="grid sm:grid-cols-2 gap-4">
                 <BookField label="Your name" value={form.name} onChange={(v) => setForm({ ...form, name: v })} required maxLength={100} />
-                <BookField label="Email" type="email" value={form.email} onChange={(v) => setForm({ ...form, email: v })} required maxLength={255} />
+                <BookField label="Email" type="email" value={form.email} onChange={(v) => setForm({ ...form, email: v })} maxLength={255} />
               </div>
-              <BookField label="Phone (optional)" type="tel" value={form.phone} onChange={(v) => setForm({ ...form, phone: v })} maxLength={40} />
+              <BookField label="Phone" type="tel" value={form.phone} onChange={(v) => setForm({ ...form, phone: v })} required maxLength={40} />
 
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
