@@ -4,8 +4,8 @@ import { supabaseAdmin } from "@/integrations/supabase/client.server";
 
 const schema = z.object({
   name: z.string().trim().min(1).max(100),
-  email: z.string().trim().email().max(255),
-  phone: z.string().trim().max(40).optional().or(z.literal("")),
+  email: z.string().trim().email().max(255).optional().or(z.literal("")),
+  phone: z.string().trim().min(1).max(40),
   countryCode: z.string().trim().max(8).optional().or(z.literal("")),
   countryName: z.string().trim().max(80).optional().or(z.literal("")),
   preferredDate: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
@@ -21,7 +21,7 @@ export const bookCall = createServerFn({ method: "POST" })
       .from("scheduled_calls")
       .insert({
         name: data.name,
-        email: data.email,
+        email: data.email || "",
         phone: data.phone || null,
         country_code: data.countryCode || null,
         country_name: data.countryName || null,
