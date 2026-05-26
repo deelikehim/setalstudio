@@ -21,7 +21,7 @@ export const bookCall = createServerFn({ method: "POST" })
       .from("scheduled_calls")
       .insert({
         name: data.name,
-        email: data.email,
+        email: data.email || "",
         phone: data.phone || null,
         country_code: data.countryCode || null,
         country_name: data.countryName || null,
