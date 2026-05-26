@@ -8,7 +8,7 @@ import { Marquee } from "@/components/Marquee";
 import { Reveal } from "@/components/Reveal";
 import { Counter } from "@/components/Counter";
 import { projects, clients, stats, testimonials, awards, processSteps } from "@/lib/content";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const Route = createFileRoute("/")({
   head: () => ({
