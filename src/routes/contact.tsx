@@ -126,7 +126,7 @@ function ContactPage() {
                       value={data.phone}
                       onChange={(e) => setData({ ...data, phone: e.target.value.replace(/[^\d\s-]/g, "") })}
                       maxLength={20}
-                      placeholder="704 678 7443"
+                      placeholder="802 943 0064"
                       className="flex-1 bg-transparent text-base sm:text-lg font-serif italic outline-none placeholder:text-muted-foreground/40 min-w-0"
                     />
                   </div>
