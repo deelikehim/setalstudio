@@ -43,7 +43,7 @@ export function Footer() {
               { l: "Manifesto" }, { l: "Process" }, { l: "Press kit" }, { l: "Awards" },
             ]} />
             <FooterCol title="Social" items={[
-              { l: "Instagram" }, { l: "Dribbble" }, { l: "Behance" }, { l: "LinkedIn" }, { l: "Are.na" },
+              { l: "Instagram" }, { l: "LinkedIn" },
             ]} />
             <FooterCol title="Studios" items={[
               { l: "Lagos, NG" }, { l: "Ekpoma, Edo" }, { l: "Manchester, UK (soon)" }, { l: "Remote worldwide" },
