@@ -280,7 +280,7 @@ export const faqs = [
   { q: "Do you work with early-stage founders?", a: "Yes. We reserve roughly 20% of our annual capacity for ambitious early-stage founders, often with flexible payment terms." },
   { q: "Where is the studio based?", a: "We are headquartered in Lagos, Nigeria with a second studio in Ekpoma, Edo State, and a Manchester (UK) studio opening soon. We serve clients across Africa, Europe, the Americas, Asia and Oceania." },
   { q: "Do you also handle development?", a: "Always. Design and engineering are inseparable here. We never hand off a Figma file and walk away — every project ships from this studio." },
-  { q: "How do we get started?", a: "Send a brief through the contact page, WhatsApp / call +234 704 678 7443, message us on Telegram, or email setalstudio@gmail.com. We reply to every serious enquiry within 48 hours." },
+  { q: "How do we get started?", a: "Send a brief through the contact page, WhatsApp / call +234 802 943 0064, message us on Telegram, or email setalstudio@gmail.com. We reply to every serious enquiry within 48 hours." },
 ];
 
 export const processSteps = [
@@ -304,8 +304,9 @@ export const contactInfo = {
   email: "setalstudio@gmail.com",
   phone: "+234 802 943 0064",
   phoneTel: "tel:+2348029430064",
+  sms: "sms:+2348029430064",
   whatsapp: "https://wa.me/2348029430064",
-  telegram: "https://t.me/+2348029430064",
+  telegram: "https://t.me/+2347046787443",
   calendar: "https://cal.com/setalstudio/intro",
 };
 
