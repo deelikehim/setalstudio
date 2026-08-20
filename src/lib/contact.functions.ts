@@ -41,6 +41,19 @@ export const submitContact = createServerFn({ method: "POST" })
       throw new Error("Could not submit your brief. Please try again.");
     }
 
+    // Notify studio owner via Telegram (free, no paid email/domain required)
+    notifyTelegram({
+      type: "contact",
+      name: data.name,
+      email: data.email,
+      phone: data.phone,
+      countryName: data.countryName,
+      tier: data.tier,
+      budget: data.budget,
+      contactMethod: data.contactMethod,
+      message: data.message,
+    }).catch((e) => console.error("Telegram notify failed:", e));
+
     // Optional webhook forwarding (Zapier / Make / custom email service)
     const webhook = process.env.CONTACT_WEBHOOK_URL;
     if (webhook) {
