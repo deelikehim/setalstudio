@@ -39,6 +39,19 @@ export const bookCall = createServerFn({ method: "POST" })
       throw new Error("Could not save your booking. Please try again.");
     }
 
+    // Notify studio owner via Telegram (free, no paid email/domain required)
+    notifyTelegram({
+      type: "booking",
+      name: data.name,
+      phone: data.phone,
+      email: data.email,
+      countryName: data.countryName,
+      preferredDate: data.preferredDate,
+      preferredTime: data.preferredTime,
+      timezone: data.timezone,
+      notes: data.notes,
+    }).catch((e) => console.error("Telegram notify failed:", e));
+
     const webhook = process.env.CONTACT_WEBHOOK_URL;
     if (webhook) {
       try {
