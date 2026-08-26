@@ -6,6 +6,7 @@ import work5 from "@/assets/work-5.jpg";
 import work6 from "@/assets/work-6.jpg";
 import workBarkyardspot from "@/assets/work-barkyardspot.png";
 import workClimaxclub from "@/assets/work-climaxclub.png";
+import workWestfield from "@/assets/work-westfield.jpg";
 import hero from "@/assets/hero.jpg";
 import portrait from "@/assets/portrait.jpg";
 
@@ -30,6 +31,7 @@ export const projects: Project[] = [
   { slug: "noir", client: "Noir Cuisine", title: "Three Michelin stars", category: "Hospitality / Bookings", year: "2023", image: work6, span: "md:col-span-5" },
   { slug: "barkyardspot", client: "Barkyard Spot", title: "Premium lounge experience", category: "Website / Lifestyle", year: "2025", image: workBarkyardspot, span: "md:col-span-6", url: "https://barkyardspot.lovable.app" },
   { slug: "climaxclub", client: "Climax Club", title: "Private members experience", category: "Website / Lifestyle", year: "2025", image: workClimaxclub, span: "md:col-span-6", url: "https://climaxclub-zdvqacav.manus.space" },
+  { slug: "westfield", client: "Westfield Business School", title: "Educating Principled Leaders", category: "Website / Education", year: "2026", image: workWestfield, span: "md:col-span-6", url: "https://westfield.lovable.app" },
 ];
 
 export const clients = [
