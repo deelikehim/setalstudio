@@ -9,6 +9,7 @@ import workClimaxclub from "@/assets/work-climaxclub.png";
 import workWestfield from "@/assets/work-westfield.jpg";
 import workNbtiblog from "@/assets/work-nbtiblog.jpg";
 import workTic from "@/assets/work-tic.png";
+import serviceLogo from "@/assets/service-logo.jpg";
 import hero from "@/assets/hero.jpg";
 import portrait from "@/assets/portrait.jpg";
 
