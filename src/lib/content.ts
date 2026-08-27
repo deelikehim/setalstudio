@@ -313,7 +313,7 @@ export const awards = [
 ];
 
 export const faqs = [
-  { q: "What does a typical engagement cost?", a: "Landing pages start from ₦150,000 / £80. Full websites start from ₦412,000 / £220. Web apps and e-commerce platforms scale from ₦650,000 / £350. Mobile apps start from ₦1,150,000 / £620. Every proposal is bespoke to your scope." },
+  { q: "What does a typical engagement cost?", a: "Logo design starts from ₦80,000 / £45. Landing pages start from ₦150,000 / £80. Full websites start from ₦412,000 / £220. Web apps and e-commerce platforms scale from ₦650,000 / £350. Mobile apps start from ₦1,150,000 / £620. Every proposal is bespoke to your scope." },
   { q: "How long does a project take?", a: "A landing page takes 1–2 weeks. A full website is 4–6 weeks. Web apps and mobile apps typically take 6–14 weeks. Timelines are set at week zero and honored." },
   { q: "Do you work with early-stage founders?", a: "Yes. We reserve roughly 20% of our annual capacity for ambitious early-stage founders, often with flexible payment terms." },
   { q: "Where is the studio based?", a: "We are headquartered in Lagos, Nigeria with a second studio in Ekpoma, Edo State, and a Manchester (UK) studio opening soon. We serve clients across Africa, Europe, the Americas, Asia and Oceania." },
