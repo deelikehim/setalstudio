@@ -8,6 +8,7 @@ import workBarkyardspot from "@/assets/work-barkyardspot.png";
 import workClimaxclub from "@/assets/work-climaxclub.png";
 import workWestfield from "@/assets/work-westfield.jpg";
 import workNbtiblog from "@/assets/work-nbtiblog.jpg";
+import workTic from "@/assets/work-tic.png";
 import hero from "@/assets/hero.jpg";
 import portrait from "@/assets/portrait.jpg";
 
@@ -34,6 +35,7 @@ export const projects: Project[] = [
   { slug: "climaxclub", client: "Climax Club", title: "Private members experience", category: "Website / Lifestyle", year: "2025", image: workClimaxclub, span: "md:col-span-6", url: "https://climaxclub-zdvqacav.manus.space" },
   { slug: "westfield", client: "Westfield Business School", title: "Educating Principled Leaders", category: "Website / Education", year: "2026", image: workWestfield, span: "md:col-span-6", url: "https://westfield.lovable.app" },
   { slug: "nbtiblog", client: "NBTI Journal", title: "Field notes from Nigeria's incubation network", category: "Website / Blog", year: "2026", image: workNbtiblog, span: "md:col-span-6", url: "https://nbtiblog.lovable.app" },
+  { slug: "technology-incubation-centre", client: "Technology Incubation Centre Lagos", title: "Innovate. Connect. Grow.", category: "Website / Innovation", year: "2026", image: workTic, span: "md:col-span-6", url: "https://technologyincubationcenter.lovable.app/" },
 ];
 
 export const clients = [
