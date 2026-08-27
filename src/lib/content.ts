@@ -256,6 +256,37 @@ export const services: Service[] = [
       { q: "What's not included?", a: "Major new sections or full redesigns are scoped separately; the retainer covers maintenance, small updates and strategy." },
     ],
   },
+  {
+    slug: "logo-design",
+    no: "07",
+    title: "Logo Design",
+    tagline: "A mark that owns the room before you speak.",
+    desc: "Distinctive wordmarks, symbols and complete logo systems designed to make premium brands instantly recognisable.",
+    detail: "We design bespoke logos and identity marks that balance strategy and style. Every package includes primary logo explorations, a refined final mark, alternate lock-ups, clear-space rules, colour and monochrome versions, plus source files ready for web, print and merchandise.",
+    deliverables: ["3 initial concepts", "Final logo suite", "Colour & monochrome variants", "Source files (SVG, PNG, PDF)"],
+    ngn: "80,000",
+    gbp: "45",
+    timeline: "1–2 weeks",
+    hero: serviceLogo,
+    gallery: [serviceLogo, work3, work5],
+    benefits: [
+      { title: "Strategic first", body: "We start with your positioning, audience and competition so the mark carries meaning, not just aesthetics." },
+      { title: "Truly bespoke", body: "Every concept is drawn from scratch for your brand — no templates, no recycled symbols." },
+      { title: "Production-ready", body: "Files are delivered in vector and raster formats with clear usage guidelines for any medium." },
+      { title: "Scalable identity", body: "The logo system works everywhere — from app icons and social avatars to billboards and merchandise." },
+    ],
+    process: [
+      { step: "01", title: "Discovery", body: "We audit your brand, audience and competitors to define the creative territory." },
+      { step: "02", title: "Concepts", body: "Three distinct logo directions are presented with rationale and use-case mockups." },
+      { step: "03", title: "Refinement", body: "We converge on one direction and refine details, proportions and alternate lock-ups." },
+      { step: "04", title: "Delivery", body: "Final files, colour specs and a simple brand-usage guide are handed over." },
+    ],
+    idealFor: ["New brands & startups", "Rebrands & refreshes", "Premium product lines", "Founders raising capital"],
+    faqs: [
+      { q: "How many logo concepts do I get?", a: "The standard package includes three distinct initial concepts, then unlimited refinement on the chosen direction." },
+      { q: "What files will I receive?", a: "SVG, PNG, PDF and any social or profile crop variants you need, plus a one-page usage guide." },
+    ],
+  },
 ];
 
 export const testimonials = [
