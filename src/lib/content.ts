@@ -340,10 +340,10 @@ export const regions = ["Africa", "Europe", "Americas", "Asia", "Oceania"];
 
 export const contactInfo = {
   email: "setalstudio@gmail.com",
-  phone: "+234 802 943 0064",
-  phoneTel: "tel:+2348029430064",
-  sms: "sms:+2348029430064",
-  whatsapp: "https://wa.me/2348029430064",
+  phone: "+234 704 678 7443",
+  phoneTel: "tel:+2347046787443",
+  sms: "sms:+2347046787443",
+  whatsapp: "https://wa.me/2347046787443",
   telegram: "https://t.me/+2347046787443",
   calendar: "https://cal.com/setalstudio/intro",
 };
