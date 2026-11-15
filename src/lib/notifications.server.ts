@@ -31,7 +31,7 @@ function escapeHtml(text: string): string {
     .replace(/"/g, "&quot;");
 }
 
-function formatContactMessage(data: SubmissionPayload): string {
+export function formatContactMessage(data: SubmissionPayload): string {
   const lines = [
     "<b>🚀 New SETAL Lead</b>",
     "",
