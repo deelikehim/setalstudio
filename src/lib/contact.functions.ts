@@ -48,6 +48,7 @@ export const submitContact = createServerFn({ method: "POST" })
         type: "contact",
         name: data.name,
         email: data.email,
+        company: data.company,
         phone: data.phone,
         countryName: data.countryName,
         tier: data.tier,

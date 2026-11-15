@@ -26,22 +26,16 @@ export type Project = {
 };
 
 export const projects: Project[] = [
-  { slug: "aeterna", client: "Aeterna Horology", title: "Time, rewritten", category: "E-commerce / WebGL", year: "2025", image: work1, span: "md:col-span-7 md:row-span-2" },
-  { slug: "vesta", client: "Skyline Vesta", title: "Vertical living", category: "Real Estate / Identity", year: "2025", image: work2, span: "md:col-span-5" },
-  { slug: "valentine", client: "Maison Valentine", title: "Editorial couture", category: "Fashion / Brand", year: "2024", image: work3, span: "md:col-span-5" },
-  { slug: "obsidian", client: "Obsidian Motors", title: "Engineered desire", category: "Automotive / Site", year: "2024", image: work4, span: "md:col-span-4" },
-  { slug: "elixir", client: "Maison Elixir", title: "Bottled prestige", category: "Fragrance / D2C", year: "2024", image: work5, span: "md:col-span-3" },
-  { slug: "noir", client: "Noir Cuisine", title: "Three Michelin stars", category: "Hospitality / Bookings", year: "2023", image: work6, span: "md:col-span-5" },
-  { slug: "barkyardspot", client: "Barkyard Spot", title: "Premium lounge experience", category: "Website / Lifestyle", year: "2025", image: workBarkyardspot, span: "md:col-span-6", url: "https://barkyardspot.lovable.app" },
-  { slug: "climaxclub", client: "Climax Club", title: "Private members experience", category: "Website / Lifestyle", year: "2025", image: workClimaxclub, span: "md:col-span-6", url: "https://climaxclub-zdvqacav.manus.space" },
-  { slug: "westfield", client: "Westfield Business School", title: "Educating Principled Leaders", category: "Website / Education", year: "2026", image: workWestfield, span: "md:col-span-6", url: "https://westfield.lovable.app" },
-  { slug: "nbtiblog", client: "NBTI Journal", title: "Field notes from Nigeria's incubation network", category: "Website / Blog", year: "2026", image: workNbtiblog, span: "md:col-span-6", url: "https://nbtiblog.lovable.app" },
-  { slug: "technology-incubation-centre", client: "Technology Incubation Centre Lagos", title: "Innovate. Connect. Grow.", category: "Website / Innovation", year: "2026", image: workTic, span: "md:col-span-6", url: "https://technologyincubationcenter.lovable.app/" },
+  { slug: "barkyardspot", client: "Barkyard Spot", title: "A standout lounge experience", category: "Website / Lifestyle", year: "2025", image: workBarkyardspot, span: "md:col-span-7 md:row-span-2", url: "https://barkyardspot.lovable.app" },
+  { slug: "climaxclub", client: "Climax Club", title: "A private members experience", category: "Website / Lifestyle", year: "2025", image: workClimaxclub, span: "md:col-span-5", url: "https://climaxclub-zdvqacav.manus.space" },
+  { slug: "westfield", client: "Westfield Business School", title: "Educating Principled Leaders", category: "Website / Education", year: "2026", image: workWestfield, span: "md:col-span-5", url: "https://westfield.lovable.app" },
+  { slug: "nbtiblog", client: "NBTI Journal", title: "Field notes from Nigeria's incubation network", category: "Website / Blog", year: "2026", image: workNbtiblog, span: "md:col-span-4", url: "https://nbtiblog.lovable.app" },
+  { slug: "technology-incubation-centre", client: "Technology Incubation Centre Lagos", title: "Innovate. Connect. Grow.", category: "Website / Innovation", year: "2026", image: workTic, span: "md:col-span-3", url: "https://technologyincubationcenter.lovable.app/" },
+  { slug: "setal-studio", client: "SETAL Studio", title: "A digital home for the studio", category: "Website / Studio", year: "2026", image: hero, span: "md:col-span-5", url: "https://setalstudio.lovable.app" },
 ];
 
 export const clients = [
-  "AETERNA", "VESTA", "VALENTINE", "OBSIDIAN", "ELIXIR", "NOIR",
-  "MERIDIAN", "AURUM", "VESPER", "MONOLITH", "HALCYON", "OCULUS",
+  "BARKYARD SPOT", "CLIMAX CLUB", "WESTFIELD", "NBTI JOURNAL", "TIC LAGOS", "SETAL STUDIO",
 ];
 
 export const stats: { value: number; suffix: string; label: string; prefix?: string }[] = [

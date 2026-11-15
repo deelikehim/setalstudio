@@ -2,6 +2,7 @@ type SubmissionPayload = {
   type: "contact";
   name: string;
   email: string;
+  company?: string | null;
   phone?: string | null;
   countryName?: string | null;
   tier?: string | null;
@@ -30,7 +31,7 @@ function escapeHtml(text: string): string {
     .replace(/"/g, "&quot;");
 }
 
-function formatContactMessage(data: SubmissionPayload): string {
+export function formatContactMessage(data: SubmissionPayload): string {
   const lines = [
     "<b>🚀 New SETAL Lead</b>",
     "",
@@ -38,6 +39,7 @@ function formatContactMessage(data: SubmissionPayload): string {
     `<b>Email:</b> ${escapeHtml(data.email)}`,
   ];
 
+  if (data.company) lines.push(`<b>Company:</b> ${escapeHtml(data.company)}`);
   if (data.phone) lines.push(`<b>Phone:</b> ${escapeHtml(data.phone)}`);
   if (data.countryName) lines.push(`<b>Country:</b> ${escapeHtml(data.countryName)}`);
   if (data.tier) lines.push(`<b>Service Tier:</b> ${escapeHtml(data.tier)}`);

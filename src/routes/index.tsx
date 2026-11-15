@@ -132,9 +132,9 @@ function HomePage() {
           </Reveal>
 
           <div className="grid md:grid-cols-12 gap-6 md:gap-8">
-            {projects.slice(0, 4).map((p, i) => (
+            {projects.slice(0, 6).map((p, i) => (
               <Reveal key={p.slug} delay={i * 80} className={p.span}>
-                <Link to="/work" className="group block">
+                <a href={p.url ?? "/work"} target={p.url ? "_blank" : undefined} rel={p.url ? "noopener noreferrer" : undefined} className="group block">
                   <div className="relative overflow-hidden rounded-md border border-border bg-card aspect-[4/5]">
                     <img
                       src={p.image}
@@ -159,7 +159,7 @@ function HomePage() {
                       <span className="text-gold font-mono text-xs">{p.year}</span>
                     </div>
                   </div>
-                </Link>
+                </a>
               </Reveal>
             ))}
           </div>
