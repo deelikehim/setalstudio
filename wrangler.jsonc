@@ -3,4 +3,4 @@
   "name": "tanstack-start-app",
   "compatibility_date": "2025-09-24",
   "compatibility_flags": ["nodejs_compat"],
-  "pages/_build/_output/_dir":dist"/'
+  "pages/_build/_output/_dir":"dist"/'
