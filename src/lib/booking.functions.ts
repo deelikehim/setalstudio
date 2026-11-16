@@ -1,6 +1,6 @@
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
-import { supabaseAdmin } from "@/integrations/supabase/client.server";
+import { getPublicDb } from "./public-db.server";
 import { notifyTelegram } from "./notifications.server";
 
 const schema = z.object({
@@ -18,9 +18,11 @@ const schema = z.object({
 export const bookCall = createServerFn({ method: "POST" })
   .inputValidator((input) => schema.parse(input))
   .handler(async ({ data }) => {
-    const { error, data: row } = await supabaseAdmin
+    const id = crypto.randomUUID();
+    const { error } = await getPublicDb()
       .from("scheduled_calls")
       .insert({
+        id,
         name: data.name,
         email: data.email || "",
         phone: data.phone || null,
@@ -30,9 +32,7 @@ export const bookCall = createServerFn({ method: "POST" })
         preferred_time: data.preferredTime,
         timezone: data.timezone || null,
         notes: data.notes || null,
-      })
-      .select("id")
-      .single();
+      });
 
     if (error) {
       console.error("Failed to save booking:", error);
@@ -65,7 +65,7 @@ export const bookCall = createServerFn({ method: "POST" })
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             type: "scheduled_call",
-            id: row?.id,
+            id: id,
             receivedAt: new Date().toISOString(),
             ...data,
           }),
@@ -75,5 +75,5 @@ export const bookCall = createServerFn({ method: "POST" })
       }
     }
 
-    return { ok: true, id: row?.id };
+    return { ok: true, id: id };
   });
