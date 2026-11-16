@@ -31,7 +31,7 @@ export const projects: Project[] = [
   { slug: "westfield", client: "Westfield Business School", title: "Educating Principled Leaders", category: "Website / Education", year: "2026", image: workWestfield, span: "md:col-span-5", url: "https://westfield.lovable.app" },
   { slug: "nbtiblog", client: "NBTI Journal", title: "Field notes from Nigeria's incubation network", category: "Website / Blog", year: "2026", image: workNbtiblog, span: "md:col-span-4", url: "https://nbtiblog.lovable.app" },
   { slug: "technology-incubation-centre", client: "Technology Incubation Centre Lagos", title: "Innovate. Connect. Grow.", category: "Website / Innovation", year: "2026", image: workTic, span: "md:col-span-3", url: "https://technologyincubationcenter.lovable.app/" },
-  { slug: "setal-studio", client: "SETAL Studio", title: "A digital home for the studio", category: "Website / Studio", year: "2026", image: hero, span: "md:col-span-5", url: "https://setalstudio.lovable.app" },
+  { slug: "setal-studio", client: "SETAL Studio", title: "A digital home for the studio", category: "Website / Studio", year: "2026", image: hero, span: "md:col-span-5", url: "https://setalstudio.pages.dev/" },
 ];
 
 export const clients = [
