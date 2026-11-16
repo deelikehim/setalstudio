@@ -1,6 +1,6 @@
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
-import { supabaseAdmin } from "@/integrations/supabase/client.server";
+import { getPublicDb } from "./public-db.server";
 import { notifyTelegram } from "./notifications.server";
 
 const submissionSchema = z.object({
@@ -19,9 +19,11 @@ const submissionSchema = z.object({
 export const submitContact = createServerFn({ method: "POST" })
   .inputValidator((input) => submissionSchema.parse(input))
   .handler(async ({ data }) => {
-    const { error, data: row } = await supabaseAdmin
+    const id = crypto.randomUUID();
+    const { error } = await getPublicDb()
       .from("contact_submissions")
       .insert({
+        id,
         name: data.name,
         email: data.email,
         company: data.company || null,
@@ -32,9 +34,7 @@ export const submitContact = createServerFn({ method: "POST" })
         budget: data.budget || null,
         contact_method: data.contactMethod || null,
         message: data.message || null,
-      })
-      .select("id")
-      .single();
+      });
 
     if (error) {
       console.error("Failed to save contact submission:", error);
@@ -68,7 +68,7 @@ export const submitContact = createServerFn({ method: "POST" })
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            id: row?.id,
+            id: id,
             receivedAt: new Date().toISOString(),
             ...data,
           }),
@@ -78,5 +78,5 @@ export const submitContact = createServerFn({ method: "POST" })
       }
     }
 
-    return { ok: true, id: row?.id };
+    return { ok: true, id: id };
   });
