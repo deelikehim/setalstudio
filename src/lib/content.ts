@@ -9,6 +9,7 @@ import workClimaxclub from "@/assets/work-climaxclub.png";
 import workWestfield from "@/assets/work-westfield.jpg";
 import workNbtiblog from "@/assets/work-nbtiblog.jpg";
 import workTic from "@/assets/work-tic.png";
+import workOjbArchitects from "@/assets/ojb-architects-project.webp.asset.json";
 import serviceLogo from "@/assets/service-logo.jpg";
 import hero from "@/assets/hero.jpg";
 import portrait from "@/assets/portrait.jpg";
@@ -26,6 +27,7 @@ export type Project = {
 };
 
 export const projects: Project[] = [
+  { slug: "ojb-architects", client: "OJB Architects", title: "Architecture shaped around people and place", category: "Website / Architecture", year: "2026", image: workOjbArchitects.url, span: "md:col-span-7 md:row-span-2", url: "https://ojbarchitects.pages.dev/" },
   { slug: "barkyardspot", client: "Barkyard Spot", title: "A standout lounge experience", category: "Website / Lifestyle", year: "2025", image: workBarkyardspot, span: "md:col-span-7 md:row-span-2", url: "https://barkyardspot.lovable.app" },
   { slug: "climaxclub", client: "Climax Club", title: "A private members experience", category: "Website / Lifestyle", year: "2025", image: workClimaxclub, span: "md:col-span-5", url: "https://climaxclub-zdvqacav.manus.space" },
   { slug: "westfield", client: "Westfield Business School", title: "Educating Principled Leaders", category: "Website / Education", year: "2026", image: workWestfield, span: "md:col-span-5", url: "https://westfield.lovable.app" },
@@ -35,7 +37,7 @@ export const projects: Project[] = [
 ];
 
 export const clients = [
-  "BARKYARD SPOT", "CLIMAX CLUB", "WESTFIELD", "NBTI JOURNAL", "TIC LAGOS", "SETAL STUDIO",
+  "OJB ARCHITECTS", "BARKYARD SPOT", "CLIMAX CLUB", "WESTFIELD", "NBTI JOURNAL", "TIC LAGOS", "SETAL STUDIO",
 ];
 
 export const stats: { value: number; suffix: string; label: string; prefix?: string }[] = [
