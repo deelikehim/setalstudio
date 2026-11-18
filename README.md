@@ -1,6 +1,6 @@
 # SETAL Studio Pro
 
-Create a advanced, rich in features, should contain modern exotic features with wealthy and professional colourful ready to publish website about me being a website designer (website should be "SETAL Studio" or you can use a professional word for it for clients that might or will want me to work for them.
+We created an advanced, rich in features, that contain modern exotic features with wealthy and professional colourful ready to use website for us being a website designer (website is called "SETAL Studio")
 
 This project was built by [SETAL Studio](https://setalstudio.pages.dev/)
 
