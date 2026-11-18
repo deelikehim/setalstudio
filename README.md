@@ -2,11 +2,11 @@
 
 Create a advanced, rich in features, should contain modern exotic features with wealthy and professional colourful ready to publish website about me being a website designer (website should be "SETAL Studio" or you can use a professional word for it for clients that might or will want me to work for them.
 
-This project was built with [Lovable](https://lovable.dev).
+This project was built by [SETAL Studio](https://setalstudio.pages.dev/)
 
-**Live app**: https://setalstudio.lovable.app
+**Live app**: https://setalstudio.pages.dev
 
-## Build with Lovable
+## Build by setal
 
 Continue developing this project in the [Lovable editor](https://lovable.dev/projects/096d4e9a-e920-47fc-84f4-80240ab197d0).
 
